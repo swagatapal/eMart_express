@@ -31,18 +31,23 @@ class SignIn extends StatelessWidget {
                 controller: authController.nameController,
                 labelText: "Name",
                 suffixIcon: authController.isNameValid ? "correct_icon": null,
+                onValueChanged: (value) => authController.updateName(),
               ),
               const SizedBox(height: 20),
               CommonTextFormField(
                 controller: authController.emailController,
                 labelText: "Email",
                 suffixIcon: authController.isEmailValid ? "correct_icon" : null,
+                onValueChanged: (value) => authController.updateEmail(),
+
               ),
               const SizedBox(height: 20),
               CommonTextFormField(
                 controller: authController.passwordController,
                 labelText: "Password",
                 suffixIcon: authController.isPasswordValid ? "correct_icon" : null,
+                onValueChanged: (value) => authController.updatePassword(),
+
               ),
             ],
           ),

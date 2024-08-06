@@ -4,6 +4,17 @@ class AuthProvider with ChangeNotifier {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController nameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  void updateName() {
+    notifyListeners();
+  }
+
+  void updateEmail() {
+    notifyListeners();
+  }
+
+  void updatePassword() {
+    notifyListeners();
+  }
 
   void dispose() {
     emailController.dispose();
