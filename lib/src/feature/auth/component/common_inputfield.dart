@@ -99,23 +99,23 @@ class _CommonTextFormFieldState extends State<CommonTextFormField> {
                   AppDecoration.sFormField.copyWith(
                       errorBorder: OutlineInputBorder(
                         borderSide:
-                        const BorderSide(color: Colors.red, width: 1.0),
-                        borderRadius: BorderRadius.circular(12),
+                        const BorderSide(color: Colors.red, width: 2.0),
+                        borderRadius: BorderRadius.circular(6),
                       ),
                       focusedErrorBorder: OutlineInputBorder(
                         borderSide:
-                        const BorderSide(color: Colors.red, width: 1.0),
-                        borderRadius: BorderRadius.circular(12),
+                        const BorderSide(color: Colors.red, width: 2.0),
+                        borderRadius: BorderRadius.circular(6),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: const BorderSide(
-                            color: AppColors.primaryButtonColor, width: 1.0),
-                        borderRadius: BorderRadius.circular(12),
+                            color: AppColors.primaryButtonColor, width: 2.0),
+                        borderRadius: BorderRadius.circular(6),
                       ),
                       disabledBorder: OutlineInputBorder(
                         borderSide: const BorderSide(
-                            color: AppColors.primaryButtonColor, width: 1.0),
-                        borderRadius: BorderRadius.circular(12),
+                            color: AppColors.primaryButtonColor, width: 2.0),
+                        borderRadius: BorderRadius.circular(6),
                       ),
                       filled: true,
                       fillColor: widget.fillColors,

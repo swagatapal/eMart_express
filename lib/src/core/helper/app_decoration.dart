@@ -12,31 +12,31 @@ class AppDecoration {
 
   static InputDecoration sFormField = InputDecoration(
     contentPadding:
-    const EdgeInsets.only(left: 18.0, bottom: 12.0, top: 12.0, right: 18),
+    const EdgeInsets.only(left: 20.0, bottom: 20.0, top: 20.0, right: 20),
     filled: true,
     // fillColor: AppColors.colorTextBox,
     errorStyle: const TextStyle(
       color: Colors.red,
       fontFamily: 'Roboto',
-      fontSize: 14,
+      fontSize: 18,
     ),
     focusedBorder: OutlineInputBorder(
       borderSide:
-      const BorderSide(color: AppColors.primaryButtonColor, width: 1.0),
-      borderRadius: BorderRadius.circular(12),
+      const BorderSide(color: AppColors.white, width: 1.0),
+      borderRadius: BorderRadius.circular(6),
     ),
     enabledBorder: OutlineInputBorder(
       borderSide:
-      const BorderSide(color: AppColors.primaryButtonColor, width: 1.0),
-      borderRadius: BorderRadius.circular(12),
+      const BorderSide(color: AppColors.white, width: 1.0),
+      borderRadius: BorderRadius.circular(6),
     ),
 
     border: UnderlineInputBorder(
       borderSide: const BorderSide(color: Colors.white, width: 5),
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(6),
     ),
     errorBorder: UnderlineInputBorder(
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(6),
       borderSide: const BorderSide(color: Colors.transparent, width: 1.0),
     ),
 
@@ -48,12 +48,12 @@ class AppDecoration {
         fontWeight: FontWeight.w600),
     labelStyle: const TextStyle(
         color: AppColors.primaryButtonColor,
-        fontSize: 14.0,
+        fontSize: 18.0,
         fontFamily: 'Roboto',
         fontWeight: FontWeight.w400),
     hintStyle: const TextStyle(
         color: AppColors.colorSecondaryText2,
-        fontSize: 14.0,
+        fontSize: 18.0,
         fontFamily: 'Roboto',
         height: 0,
         fontWeight: FontWeight.w400),
@@ -64,7 +64,7 @@ class AppDecoration {
     hintText: "Hint Here",
     hintStyle: TextStyle(
         color: AppColors.colorSecondaryText2,
-        fontSize: 14.0,
+        fontSize: 18.0,
         fontFamily: 'Roboto',
         fontWeight: FontWeight.w400),
     helperMaxLines: 1,

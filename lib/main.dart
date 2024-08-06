@@ -1,4 +1,5 @@
 import 'package:emart_express/src/core/route_generator/router.dart';
+import 'package:emart_express/src/feature/auth/controller/auth_controller.dart';
 import 'package:emart_express/src/feature/splash/controller/splash_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -25,6 +26,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (context) => SplashProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => AuthProvider(),
         ),
       ],
       child: MaterialApp(
