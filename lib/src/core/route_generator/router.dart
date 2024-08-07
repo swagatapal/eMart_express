@@ -1,3 +1,5 @@
+import 'package:emart_express/src/feature/auth/view/forgotPassword.dart';
+import 'package:emart_express/src/feature/auth/view/login.dart';
 import 'package:emart_express/src/feature/auth/view/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:emart_express/src/feature/splash/view/splash_screen.dart';
@@ -5,6 +7,8 @@ import 'package:emart_express/src/feature/splash/view/splash_screen.dart';
 class AppRoutes {
   static const String splash = '/';
   static const String signIn = '/SignIn';
+  static const String logIn = '/LogIn';
+  static const String forgotPassword = '/ForgotPassword';
 // Define other routes here
 }
 
@@ -13,8 +17,15 @@ class AppRouter {
     switch (settings.name) {
       case AppRoutes.splash:
         return MaterialPageRoute(builder: (context) => const SplashScreen());
+
       case AppRoutes.signIn:
         return MaterialPageRoute(builder: (context) => const SignIn());
+
+      case AppRoutes.logIn:
+        return MaterialPageRoute(builder: (context) => const LogIn());
+
+      case AppRoutes.forgotPassword:
+        return MaterialPageRoute(builder: (context) => const ForgotPassword());
     // case AppRoutes.details:
     //   final args = settings.arguments as String?;
     //   return MaterialPageRoute(

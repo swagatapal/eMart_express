@@ -25,7 +25,8 @@ class CommonAuthHeader extends StatelessWidget {
           style: TextStyle(
               fontWeight:FontWeight.bold,
               color: AppColors.black1,
-              fontSize: 34
+              fontSize: 34,
+              fontFamily: 'Roboto'
           ),)
       ],
     );
