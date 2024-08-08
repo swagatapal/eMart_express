@@ -56,7 +56,7 @@ class LogIn extends StatelessWidget {
                 const SizedBox(height: 36,),
                 CommonButton(
                   onClicked: (){
-                    //Navigator.pushNamed(context, '/LogIn');
+                    Navigator.pushNamed(context, '/VisualSearch');
                   },
                   solidColor: AppColors.red,
                   label: "LOGIN",

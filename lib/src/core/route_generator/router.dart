@@ -1,6 +1,8 @@
 import 'package:emart_express/src/feature/auth/view/forgotPassword.dart';
 import 'package:emart_express/src/feature/auth/view/login.dart';
 import 'package:emart_express/src/feature/auth/view/signin.dart';
+import 'package:emart_express/src/feature/visualSearch/view/search_by_taking_photo.dart';
+import 'package:emart_express/src/feature/visualSearch/view/visual_search.dart';
 import 'package:flutter/material.dart';
 import 'package:emart_express/src/feature/splash/view/splash_screen.dart';
 
@@ -9,6 +11,8 @@ class AppRoutes {
   static const String signIn = '/SignIn';
   static const String logIn = '/LogIn';
   static const String forgotPassword = '/ForgotPassword';
+  static const String visualSearch = '/VisualSearch';
+  static const String searchByTakingPhoto = '/SearchByTakingPhoto';
 // Define other routes here
 }
 
@@ -26,6 +30,12 @@ class AppRouter {
 
       case AppRoutes.forgotPassword:
         return MaterialPageRoute(builder: (context) => const ForgotPassword());
+
+      case AppRoutes.visualSearch:
+        return MaterialPageRoute(builder: (context) => const VisualSearch());
+
+      case AppRoutes.searchByTakingPhoto:
+        return MaterialPageRoute(builder: (context) => const SearchByTakingPhoto());
     // case AppRoutes.details:
     //   final args = settings.arguments as String?;
     //   return MaterialPageRoute(

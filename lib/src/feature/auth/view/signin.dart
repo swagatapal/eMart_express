@@ -67,7 +67,7 @@ class SignIn extends StatelessWidget {
                 ),
                 CommonButton(
                   onClicked: () {
-                    //
+                    Navigator.pushNamed(context, '/VisualSearch');
                   },
                   solidColor: AppColors.red,
                   label: "SIGN UP",
