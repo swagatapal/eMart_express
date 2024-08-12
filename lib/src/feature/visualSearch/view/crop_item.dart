@@ -1,15 +1,8 @@
 import 'package:emart_express/src/core/common_components/common_header.dart';
 import 'package:flutter/material.dart';
 
-
-class SearchByTakingPhoto extends StatefulWidget {
-  const SearchByTakingPhoto({super.key});
-
-  @override
-  State<SearchByTakingPhoto> createState() => _SearchByTakingPhotoState();
-}
-
-class _SearchByTakingPhotoState extends State<SearchByTakingPhoto> {
+class CropItem extends StatelessWidget {
+  const CropItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +11,11 @@ class _SearchByTakingPhotoState extends State<SearchByTakingPhoto> {
         child: Column(
           children: [
             CommonHeader(
-                text: "Search by taking a photo",
+                text: "Crop the item",
                 isVisibleText: true, isVisibleDivider: false,),
             ElevatedButton(onPressed: (){
-              Navigator.pushNamed(context, '/CropItem');
-            }, child:Text("Next Page demo") )
+              Navigator.pushNamed(context, '/VisualSearchFinding');
+            }, child: Text("Finding Page"))
           ],
         ),
       ),
