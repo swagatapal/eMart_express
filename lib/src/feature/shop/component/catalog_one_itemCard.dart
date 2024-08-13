@@ -131,7 +131,7 @@ class CatalogOneItemCard extends StatelessWidget {
               child: Icon(
                 Icons.favorite_border,
                 color: AppColors.grey,
-                size: 30,
+                size: 20,
               ),
             ),
           )
