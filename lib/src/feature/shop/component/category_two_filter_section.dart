@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 
 class CategoryTwoFilterSection extends StatelessWidget {
   late Function()? onClicked;
+  late Function()? onArrowClicked;
+  late Function()? onFilterClicked;
   final String rightIcon;
-   CategoryTwoFilterSection({super.key,this.onClicked, required this.rightIcon});
+  final String text;
+   CategoryTwoFilterSection({super.key,required this.text,this.onClicked,this.onArrowClicked,this.onFilterClicked, required this.rightIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +25,10 @@ class CategoryTwoFilterSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children:  [
               Row(
-                children:const [
-                  Icon(Icons.filter_list_sharp, size: 24,),
+                children: [
+                  InkWell(
+                    onTap:onFilterClicked,
+                      child: Icon(Icons.filter_list_sharp, size: 24,)),
                   SizedBox(width: 8,),
                   Text("Filters", style: TextStyle(
                     fontSize: 11,
@@ -36,9 +41,11 @@ class CategoryTwoFilterSection extends StatelessWidget {
 
               Row(
                 children: [
-                  Image.asset("assets/icons/up_down_arrow.png",height: 24,width: 24,),
+                  InkWell(
+                    onTap: onArrowClicked,
+                      child: Image.asset("assets/icons/up_down_arrow.png",height: 24,width: 24,)),
                   SizedBox(width: 8,),
-                  Text("Price: Lowest to High", style: TextStyle(
+                  Text(text, style: TextStyle(
                       fontSize: 11,
                       fontWeight: FontWeight.w400,
                       fontFamily: "Roboto",

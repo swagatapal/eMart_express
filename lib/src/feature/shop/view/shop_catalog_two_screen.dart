@@ -1,14 +1,15 @@
 import 'package:emart_express/src/core/common_components/common_header.dart';
 import 'package:emart_express/src/core/helper/app_colors.dart';
-import 'package:emart_express/src/feature/home/component/common_item_card.dart';
 import 'package:emart_express/src/feature/shop/component/catalog_common_item_card.dart';
 import 'package:emart_express/src/feature/shop/component/catalog_two_filter_item.dart';
 import 'package:emart_express/src/feature/shop/component/category_two_filter_section.dart';
 import 'package:emart_express/src/feature/shop/component/custom_divider.dart';
+import 'package:emart_express/src/feature/shop/controller/shop_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ShopCatalogTwoScreen extends StatelessWidget {
-  const ShopCatalogTwoScreen({super.key});
+   ShopCatalogTwoScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +26,7 @@ class ShopCatalogTwoScreen extends StatelessWidget {
       "Skirts",
       "Dresses"
     ];
+
     return Scaffold(
       backgroundColor: AppColors.white,
       body: SafeArea(
@@ -53,11 +55,19 @@ class ShopCatalogTwoScreen extends StatelessWidget {
                   }),
             ),
 
-            CategoryTwoFilterSection(
-              rightIcon: 'assets/icons/View.png',
-              onClicked: (){
-                Navigator.pop(context);
-              },
+            Consumer<ShopProvider>(
+              builder: (context, shopProvider, child){
+                return CategoryTwoFilterSection(
+                  text: shopProvider.selectedFilter,
+                  rightIcon: 'assets/icons/View.png',
+                  onClicked: (){
+                    Navigator.pop(context);
+                  },
+                  onArrowClicked: (){
+                    showCustomModalBottomSheet(context);
+                  },
+                );
+              }
             ),
 
             CustomDivider(),
@@ -115,4 +125,84 @@ class ShopCatalogTwoScreen extends StatelessWidget {
       ),
     );
   }
+
+  final List<String> filterItems = [
+    "Popular",
+    "Newest",
+    "Customer Review",
+    "Price: lowest to high",
+    "Price: highest to low"
+  ];
+
+   void showCustomModalBottomSheet(BuildContext context) {
+     showModalBottomSheet(
+       context: context,
+       backgroundColor: Colors.transparent, // Makes the sheet's background transparent
+       builder: (BuildContext context) {
+         return Container(
+           height: MediaQuery.of(context).size.height * 0.37,
+           width: MediaQuery.of(context).size.width,
+           decoration: BoxDecoration(
+             color: AppColors.white, // Light grey background for the bottom sheet
+             borderRadius: BorderRadius.only(
+               topRight: Radius.circular(25),
+               topLeft: Radius.circular(25),
+             ),
+           ),
+           child: Column(
+             children: [
+               SizedBox(height: 15),
+               Container(
+                 width: 80,
+                 height: 4,
+                 color: AppColors.grey,
+               ),
+               SizedBox(height: 10),
+               Text(
+                 "Sort by",
+                 style: TextStyle(
+                   fontSize: 18,
+                   fontWeight: FontWeight.bold,
+                   fontFamily: "Roboto",
+                   color: AppColors.black1,
+                 ),
+               ),
+               const SizedBox(height: 10,),
+               Expanded(
+                 child: Consumer<ShopProvider>(
+                   builder: (context, filterProvider, child) {
+                     return ListView.builder(
+                       itemCount: filterItems.length,
+                       itemBuilder: (BuildContext context, int index) {
+                         bool isSelected = filterItems[index] == filterProvider.selectedFilter;
+                         return GestureDetector(
+                           onTap: () {
+                             filterProvider.setSelectedFilter(filterItems[index]);
+                             Navigator.pop(context);
+                           },
+                           child: Container(
+                             color: isSelected ? AppColors.red1 : Colors.transparent,
+                             padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
+                             child: Text(
+                               filterItems[index],
+                               style: TextStyle(
+                                 fontSize: 16,
+                                 fontFamily: "Roboto",
+                                 fontWeight: FontWeight.w400,
+                                 color: isSelected ? Colors.white : AppColors.black1,
+                               ),
+                             ),
+                           ),
+                         );
+                       },
+                     );
+                   },
+                 ),
+               ),
+             ],
+           ),
+         );
+       },
+     );
+   }
 }
