@@ -2,6 +2,7 @@ import 'package:emart_express/src/feature/Home/view/home_config.dart';
 import 'package:emart_express/src/feature/auth/view/forgotPassword.dart';
 import 'package:emart_express/src/feature/auth/view/login.dart';
 import 'package:emart_express/src/feature/auth/view/signin.dart';
+import 'package:emart_express/src/feature/filter/view/filter_screen.dart';
 import 'package:emart_express/src/feature/visualSearch/view/crop_item.dart';
 import 'package:emart_express/src/feature/visualSearch/view/search_by_taking_photo.dart';
 import 'package:emart_express/src/feature/visualSearch/view/visual_search.dart';
@@ -19,6 +20,7 @@ class AppRoutes {
   static const String cropItem = '/CropItem';
   static const String visualSearchFinding = '/VisualSearchFinding';
   static const String homeConfig = '/HomeConfig';
+  static const String filterScreen = '/FilterScreen';
 
 
 }
@@ -52,6 +54,9 @@ class AppRouter {
 
       case AppRoutes.homeConfig:
         return MaterialPageRoute(builder: (context) =>  HomeConfig());
+
+      case AppRoutes.filterScreen:
+        return MaterialPageRoute(builder: (context) =>  FilterScreen());
     // case AppRoutes.details:
     //   final args = settings.arguments as String?;
     //   return MaterialPageRoute(

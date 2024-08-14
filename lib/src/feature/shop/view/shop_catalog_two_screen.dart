@@ -66,6 +66,9 @@ class ShopCatalogTwoScreen extends StatelessWidget {
                   onArrowClicked: (){
                     showCustomModalBottomSheet(context);
                   },
+                  onFilterClicked: (){
+                    Navigator.of(context, rootNavigator: true).pushNamed('/FilterScreen');
+                  },
                 );
               }
             ),
