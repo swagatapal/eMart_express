@@ -34,23 +34,23 @@ class HomeConfig extends StatelessWidget {
           bottomNavigationBar: BottomNavigationBar(
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                icon: Icon(Icons.home, size: 35,),
+                icon: Icon(Icons.home, size: 30,),
                 label: 'Home',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.shopping_cart_outlined, size: 35),
+                icon: Icon(Icons.shopping_cart_outlined, size: 30),
                 label: 'Shop',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.shopping_bag_outlined, size: 35),
+                icon: Icon(Icons.shopping_bag_outlined, size: 30),
                 label: 'Bag',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.favorite_border, size: 35),
+                icon: Icon(Icons.favorite_border, size: 30),
                 label: 'Favourite',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.person_2_outlined, size: 35),
+                icon: Icon(Icons.person_2_outlined, size: 30),
                 label: 'Profile',
               ),
             ],

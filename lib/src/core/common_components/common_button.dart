@@ -15,6 +15,7 @@ class CommonButton extends StatelessWidget {
   final double? buttonHeight;
   final double? buttonWidth;
   final bool? isLoading;
+  final bool? isBorderShadowVisible;
 
   CommonButton(
       {this.label,
@@ -29,6 +30,7 @@ class CommonButton extends StatelessWidget {
         this.buttonWidth,
         this.labelFontWeight,
         this.isLoading,
+        this.isBorderShadowVisible = true,
         super.key});
 
   @override
@@ -74,14 +76,14 @@ class CommonButton extends StatelessWidget {
                   : null,
               borderRadius:
               BorderRadius.all(Radius.circular(borderRadius)),
-            boxShadow:  [
+            boxShadow:isBorderShadowVisible ?? true?  [
               BoxShadow(
                 color: AppColors.red1.withOpacity(0.25), // Shadow color
                 offset: Offset(0, 4), // X and Y offsets
                 blurRadius: 8, // Blur radius
                 spreadRadius: 0, // Spread radius
               ),
-            ],
+            ]:[],
 
           ),
           child: Center(

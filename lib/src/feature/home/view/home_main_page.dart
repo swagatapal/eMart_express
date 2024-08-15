@@ -68,6 +68,9 @@ class HomePage extends StatelessWidget {
                     return
 
                       index == 0 ? CommonItemCard(
+                        onClicked: (){
+                          Navigator.of(context, rootNavigator: true).pushNamed('/ProductDetailsScreen');
+                        },
                       status: 'New',
                       colorStatus: AppColors.black1,
                       rateCount: '(100)',
