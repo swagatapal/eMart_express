@@ -9,8 +9,8 @@ import 'package:emart_express/src/feature/auth/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class SignIn extends StatelessWidget {
-  const SignIn({super.key});
+class LogIn extends StatelessWidget {
+  const LogIn({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,58 +27,45 @@ class SignIn extends StatelessWidget {
               children: [
                 CommonAuthHeader(
                   isVisible: true,
-                  text: "Sign up",
+                  text: "Login",
                 ),
                 SizedBox(height: ScreenUtils().screenHeight(context) * 0.1),
-                CommonTextFormField(
-                  controller: authController.nameController,
-                  labelText: "Name",
-                  suffixIcon:
-                      authController.isNameValid ? "correct_icon" : null,
-                  onValueChanged: (value) => authController.updateName(),
-                ),
                 const SizedBox(height: 20),
                 CommonTextFormField(
                   controller: authController.emailController,
                   labelText: "Email",
-                  suffixIcon:
-                      authController.isEmailValid ? "correct_icon" : null,
+                  suffixIcon: authController.isEmailValid ? "correct_icon" : null,
                   onValueChanged: (value) => authController.updateEmail(),
+
                 ),
                 const SizedBox(height: 20),
                 CommonTextFormField(
                   controller: authController.passwordController,
                   labelText: "Password",
-                  suffixIcon:
-                      authController.isPasswordValid ? "correct_icon" : null,
+                  suffixIcon: authController.isPasswordValid ? "correct_icon" : null,
                   onValueChanged: (value) => authController.updatePassword(),
+
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
+                const SizedBox(height: 20,),
                 CommonText(
-                  text: "Already have an account ?",
-                  onClicked: () {
-                    Navigator.pushNamed(context, '/LogIn');
+                  text: "Forgot your password ?",
+                  onClicked: (){
+                    Navigator.pushNamed(context, '/ForgotPassword');
                   },
                 ),
-                const SizedBox(
-                  height: 36,
-                ),
+                const SizedBox(height: 36,),
                 CommonButton(
-                  onClicked: () {
+                  onClicked: (){
                     Navigator.pushNamed(context, '/VisualSearch');
                   },
                   solidColor: AppColors.red,
-                  label: "SIGN UP",
+                  label: "LOGIN",
                   buttonHeight: 48,
                   borderRadius: 25,
                 ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.2,
-                ),
+                SizedBox(height: MediaQuery.of(context).size.height*0.25,),
                 CommonSocialLogin(
-                  text: "Or sign up with social account",
+                  text: "Or login with social account",
                 ),
               ],
             ),

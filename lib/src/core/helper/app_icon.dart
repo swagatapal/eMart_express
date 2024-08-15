@@ -19,7 +19,7 @@ class EmartIcon extends StatelessWidget {
   static const String baseIconPath = 'assets/icons';
 
   static const Map<String, String> IconsMap = <String, String>{
-    "home": "home_icon.png",
+    "correct_icon": "correct_icon.png",
   };
 
   @override
