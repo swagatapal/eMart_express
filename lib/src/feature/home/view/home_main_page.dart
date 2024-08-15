@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
                     ),),
                     const SizedBox(height: 20,),
                     CommonButton(
-                      label:"check",
+                      label:"Check",
                       labelColor: AppColors.white,
                       solidColor: AppColors.red,
                       borderRadius: 25,
@@ -66,7 +66,7 @@ class HomePage extends StatelessWidget {
                   itemCount: 10,
                   itemBuilder:(BuildContext context, int index){
                     return
-
+        
                       index == 0 ? CommonItemCard(
                         onClicked: (){
                           Navigator.of(context, rootNavigator: true).pushNamed('/ProductDetailsScreen');
@@ -101,8 +101,8 @@ class HomePage extends StatelessWidget {
                     );
                   }),
             )
-            
-
+        
+        
           ],
         ),
       ),
