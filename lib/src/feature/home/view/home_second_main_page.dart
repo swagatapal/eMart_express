@@ -15,7 +15,7 @@ class HomeSecondMainPage extends StatelessWidget {
             Stack(
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.3,
+                  height: MediaQuery.of(context).size.height * 0.35,
                   width: MediaQuery.of(context).size.width,
                   child: Image.asset(
                     "assets/images/main_page2.png",
