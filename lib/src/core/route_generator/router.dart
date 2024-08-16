@@ -5,6 +5,7 @@ import 'package:emart_express/src/feature/auth/view/signin.dart';
 import 'package:emart_express/src/feature/filter/view/brand_selection_screen.dart';
 import 'package:emart_express/src/feature/filter/view/filter_screen.dart';
 import 'package:emart_express/src/feature/productCard/view/product_details_screen.dart';
+import 'package:emart_express/src/feature/profile/view/my_order_screen.dart';
 import 'package:emart_express/src/feature/visualSearch/view/crop_item.dart';
 import 'package:emart_express/src/feature/visualSearch/view/search_by_taking_photo.dart';
 import 'package:emart_express/src/feature/visualSearch/view/visual_search.dart';
@@ -25,6 +26,7 @@ class AppRoutes {
   static const String filterScreen = '/FilterScreen';
   static const String brandSelectionScreen = '/BrandSelectionScreen';
   static const String productDetailsScreen = '/ProductDetailsScreen';
+
 
 
 }
@@ -67,6 +69,7 @@ class AppRouter {
 
       case AppRoutes.productDetailsScreen:
         return MaterialPageRoute(builder: (context) =>  ProductDetailsScreen());
+
         // case AppRoutes.details:
     //   final args = settings.arguments as String?;
     //   return MaterialPageRoute(

@@ -6,11 +6,13 @@ class CommonHeader extends StatelessWidget {
   final Icon? icon;
   bool isVisibleText = true;
   bool isVisibleDivider = false;
+  bool? isVisibleBackIcon;
   CommonHeader(
       {required this.text,
       this.icon,
       required this.isVisibleText,
         required this.isVisibleDivider,
+        this.isVisibleBackIcon = true,
       super.key});
 
   @override
@@ -31,10 +33,13 @@ class CommonHeader extends StatelessWidget {
                 onTap: (){
                   Navigator.pop(context);
                 },
-                child: Icon(
-                  Icons.arrow_back_ios,
-                  size: 30,
-                  color: AppColors.black1,
+                child: Visibility(
+                  visible:isVisibleBackIcon??true,
+                  child: Icon(
+                    Icons.arrow_back_ios,
+                    size: 30,
+                    color: AppColors.black1,
+                  ),
                 ),
               ),
               isVisibleText?Text(

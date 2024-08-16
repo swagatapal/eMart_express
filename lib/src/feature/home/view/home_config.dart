@@ -5,6 +5,7 @@ import 'package:emart_express/src/feature/bag/view/bag_screen.dart';
 import 'package:emart_express/src/feature/favourite/view/favourite_screen.dart';
 import 'package:emart_express/src/feature/home/view/home_second_main_page.dart';
 import 'package:emart_express/src/feature/home/view/home_third_main_page.dart';
+import 'package:emart_express/src/feature/profile/view/my_order_screen.dart';
 import 'package:emart_express/src/feature/profile/view/profile_screen.dart';
 import 'package:emart_express/src/feature/shop/view/shop_catalog_one_screen.dart';
 import 'package:emart_express/src/feature/shop/view/shop_catalog_two_screen.dart';
@@ -28,7 +29,7 @@ class HomeConfig extends StatelessWidget {
               _buildShopNavigator(),
               BagScreen(),
               FavouriteScreen(),
-              ProfileScreen(),
+              _buildProfileNavigator()
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
@@ -136,6 +137,31 @@ class HomeConfig extends StatelessWidget {
   }
 
   final GlobalKey<NavigatorState> shopNavigatorKey = GlobalKey<NavigatorState>();
+
+
+  Widget _buildProfileNavigator() {
+    return Navigator(
+      key: profileNavigatorKey,
+      onGenerateRoute: (RouteSettings settings) {
+        switch (settings.name) {
+          case '/':
+            return MaterialPageRoute(
+              builder: (context) => ProfileScreen(),
+            );
+          case '/MyOrderScreen':
+            return MaterialPageRoute(
+              builder: (context) => MyOrderScreen(),
+            );
+          default:
+            return MaterialPageRoute(
+              builder: (context) => ProfileScreen(),
+            );
+        }
+      },
+    );
+  }
+
+  final GlobalKey<NavigatorState> profileNavigatorKey = GlobalKey<NavigatorState>();
 
 
 
