@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:emart_express/src/feature/Home/view/home_config.dart';
 import 'package:emart_express/src/feature/auth/view/forgotPassword.dart';
 import 'package:emart_express/src/feature/auth/view/login.dart';
@@ -49,8 +51,16 @@ class AppRouter {
       case AppRoutes.visualSearch:
         return MaterialPageRoute(builder: (context) => const VisualSearch());
 
+      // case AppRoutes.searchByTakingPhoto:
+      //   return MaterialPageRoute(builder: (context) =>  SearchByTakingPhoto());
+
       case AppRoutes.searchByTakingPhoto:
-        return MaterialPageRoute(builder: (context) =>  SearchByTakingPhoto());
+      // Expecting the File argument passed through settings.arguments
+        final File imageFile = settings.arguments as File;
+        return MaterialPageRoute(
+          builder: (context) => SearchByTakingPhoto(imageFile: imageFile),
+        );
+
 
       case AppRoutes.cropItem:
         return MaterialPageRoute(builder: (context) =>  CropItem());
