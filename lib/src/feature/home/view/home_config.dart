@@ -2,6 +2,7 @@ import 'package:emart_express/src/core/helper/app_colors.dart';
 import 'package:emart_express/src/feature/Home/controller/Home_controller.dart';
 import 'package:emart_express/src/feature/Home/view/home_main_page.dart';
 import 'package:emart_express/src/feature/bag/view/bag_screen.dart';
+import 'package:emart_express/src/feature/favourite/view/favourite_module.dart';
 import 'package:emart_express/src/feature/favourite/view/favourite_screen.dart';
 import 'package:emart_express/src/feature/home/view/home_second_main_page.dart';
 import 'package:emart_express/src/feature/home/view/home_third_main_page.dart';
@@ -28,7 +29,7 @@ class HomeConfig extends StatelessWidget {
               _buildHomeNavigator(),
               _buildShopNavigator(),
               BagScreen(),
-              FavouriteScreen(),
+              _buildFavouriteNavigator(),
               _buildProfileNavigator()
             ],
           ),
@@ -163,6 +164,30 @@ class HomeConfig extends StatelessWidget {
 
   final GlobalKey<NavigatorState> profileNavigatorKey = GlobalKey<NavigatorState>();
 
+
+  Widget _buildFavouriteNavigator() {
+    return Navigator(
+      key: favouriteNavigatorKey,
+      onGenerateRoute: (RouteSettings settings) {
+        switch (settings.name) {
+          case '/':
+            return MaterialPageRoute(
+              builder: (context) => FavouriteScreen(),
+            );
+          case '/FavouriteModule':
+            return MaterialPageRoute(
+              builder: (context) => FavouriteModule(),
+            );
+          default:
+            return MaterialPageRoute(
+              builder: (context) => FavouriteScreen(),
+            );
+        }
+      },
+    );
+  }
+
+  final GlobalKey<NavigatorState> favouriteNavigatorKey = GlobalKey<NavigatorState>();
 
 
 }

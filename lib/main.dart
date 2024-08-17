@@ -1,7 +1,9 @@
 import 'package:emart_express/src/core/route_generator/router.dart';
 import 'package:emart_express/src/feature/Home/controller/Home_controller.dart';
 import 'package:emart_express/src/feature/auth/controller/auth_controller.dart';
+import 'package:emart_express/src/feature/favourite/controller/favourite_controller.dart';
 import 'package:emart_express/src/feature/filter/controller/filter_controller.dart';
+import 'package:emart_express/src/feature/productCard/controller/product_controller.dart';
 import 'package:emart_express/src/feature/shop/controller/shop_controller.dart';
 import 'package:emart_express/src/feature/splash/controller/splash_controller.dart';
 import 'package:emart_express/src/feature/visualSearch/controller/visualSearch_controller.dart';
@@ -45,6 +47,12 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => FilterProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => ProductProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => FavouriteProvider(),
         ),
       ],
       child: MaterialApp(

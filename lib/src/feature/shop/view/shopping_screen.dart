@@ -19,6 +19,7 @@ class ShoppingScreen extends StatelessWidget {
               CommonHeader(
                   text: "Categories",
                   isVisibleText: true,
+                  isVisibleBackIcon: false,
                   icon: Icon(
                     Icons.search,
                     size: 30,
