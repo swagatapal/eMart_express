@@ -76,7 +76,7 @@ class FavouriteModule extends StatelessWidget {
                   itemCount: 10,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: 0.7,
+                    childAspectRatio: 0.65,
                   ),
                   itemBuilder: (BuildContext context, int index) {
                     return Padding(
