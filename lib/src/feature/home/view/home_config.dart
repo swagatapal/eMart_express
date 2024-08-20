@@ -6,7 +6,6 @@ import 'package:emart_express/src/feature/favourite/view/favourite_module.dart';
 import 'package:emart_express/src/feature/favourite/view/favourite_screen.dart';
 import 'package:emart_express/src/feature/home/view/home_second_main_page.dart';
 import 'package:emart_express/src/feature/home/view/home_third_main_page.dart';
-import 'package:emart_express/src/feature/profile/view/my_order_screen.dart';
 import 'package:emart_express/src/feature/profile/view/profile_screen.dart';
 import 'package:emart_express/src/feature/shop/view/shop_catalog_one_screen.dart';
 import 'package:emart_express/src/feature/shop/view/shop_catalog_two_screen.dart';
@@ -14,6 +13,8 @@ import 'package:emart_express/src/feature/shop/view/shop_category_screen.dart';
 import 'package:emart_express/src/feature/shop/view/shopping_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../../order/view/my_order_screen.dart';
 
 class HomeConfig extends StatelessWidget {
   HomeConfig({super.key});

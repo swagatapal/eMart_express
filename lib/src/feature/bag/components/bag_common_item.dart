@@ -23,7 +23,7 @@ class MyBagCommonItem extends StatelessWidget {
         children: [
           Container(
             width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height*0.15,
+            height: MediaQuery.of(context).size.height*0.15,
             //height: 110,
             decoration: BoxDecoration(
               color: AppColors.white,

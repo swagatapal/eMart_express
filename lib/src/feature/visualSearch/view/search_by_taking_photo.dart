@@ -26,30 +26,30 @@ class SearchByTakingPhoto extends StatelessWidget {
                     : Text('No image selected'),
               ),
             ),
-            // Padding(
-            //   padding: const EdgeInsets.symmetric(vertical: 20.0),
-            //   child: GestureDetector(
-            //     onTap: () {
-            //       Navigator.pushNamed(context, '/CropItem');
-            //     },
-            //     child: Container(
-            //       padding:
-            //           EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
-            //       decoration: BoxDecoration(
-            //         color: Colors.red,
-            //         borderRadius: BorderRadius.circular(10.0),
-            //       ),
-            //       child: Text(
-            //         "Continue",
-            //         style: TextStyle(
-            //           color: Colors.white,
-            //           fontSize: 18.0,
-            //           fontWeight: FontWeight.bold,
-            //         ),
-            //       ),
-            //     ),
-            //   ),
-            // ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20.0),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/CropItem');
+                },
+                child: Container(
+                  padding:
+                      EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: Text(
+                    "Continue",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ),
             SizedBox(
               height: 20.0,
             )

@@ -254,6 +254,5 @@ class FavouriteVerticalListItem extends StatelessWidget {
         ],
       ),
     );
-    ;
   }
 }
