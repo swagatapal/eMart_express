@@ -40,12 +40,14 @@ class BagButtomAppbar extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20,),
-            CommonButton(
-              buttonHeight: 48,
-              borderRadius: 25,
-              label: "CHECK OUT",
-              labelColor: AppColors.white,
-              solidColor: AppColors.red1,
+            Expanded(
+              child: CommonButton(
+                buttonHeight: 48,
+                borderRadius: 25,
+                label: "CHECK OUT",
+                labelColor: AppColors.white,
+                solidColor: AppColors.red1,
+              ),
             ),
           ],
         )
