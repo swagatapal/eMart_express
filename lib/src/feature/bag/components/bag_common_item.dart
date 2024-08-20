@@ -6,10 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class MyBagCommonItem extends StatelessWidget {
+  late Function()? onClicked;
   final BagItem item;
 
-  const MyBagCommonItem(
-      {super.key, required this.item,
+   MyBagCommonItem(
+      {super.key, required this.item,this.onClicked
 
       });
 
@@ -166,8 +167,17 @@ class MyBagCommonItem extends StatelessWidget {
               ],
             ),
           ),
+          Positioned(
+              top: 10,
+              right: 10,
+              child: InkWell(
+                  onTap: (){
+                  },
+                  child: Icon(Icons.more_vert, size: 20,color: AppColors.grey,)))
         ],
       ),
     );
   }
+
+
 }

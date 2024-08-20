@@ -44,7 +44,9 @@ class BagScreen extends StatelessWidget {
                   itemCount: bagProvider.items.length,
                   itemBuilder: (BuildContext context, int index) {
                     final item = bagProvider.items[index];
-                    return MyBagCommonItem(item: item);
+                    return MyBagCommonItem(item: item,
+                    onClicked: (){
+                    },);
                   }),
             ),
           ],
@@ -146,4 +148,97 @@ class BagScreen extends StatelessWidget {
       },
     );
   }
+
+
+  void _showAlertDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          contentPadding: const EdgeInsets.only(left: 10.0, top: 20.0, bottom: 20.0),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              InkWell(
+                onTap: () {
+                  Navigator.pop(context);
+                  // Add action for the first option here
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'First Option',
+                    style: TextStyle(
+                      color: AppColors.black1,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ),
+              Divider(),
+              InkWell(
+                onTap: () {
+                  Navigator.pop(context);
+                  // Add action for the second option here
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Second Option',
+                    style: TextStyle(
+                      color: AppColors.black1,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Widget buildPopupMenuButton(BuildContext context) {
+    return PopupMenuButton<int>(
+      onSelected: (value) {
+        if (value == 1) {
+          // Add action for the first option here
+        } else if (value == 2) {
+          // Add action for the second option here
+        }
+      },
+      itemBuilder: (context) => [
+        PopupMenuItem(
+          value: 1,
+          child: Text(
+            'First Option',
+            style: TextStyle(
+              color: AppColors.black1,
+              fontSize: 16,
+            ),
+          ),
+        ),
+        PopupMenuItem(
+          value: 2,
+          child: Text(
+            'Second Option',
+            style: TextStyle(
+              color: AppColors.black1,
+              fontSize: 16,
+            ),
+          ),
+        ),
+      ],
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      icon: Icon(Icons.more_vert), // This will be your icon to trigger the menu
+    );
+  }
+
 }

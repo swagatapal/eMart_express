@@ -118,7 +118,7 @@ class PromoContainerItem extends StatelessWidget {
                       ],
                     ),
                   ),
-            
+
                 ],
               ),
             ),
