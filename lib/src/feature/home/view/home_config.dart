@@ -28,7 +28,7 @@ class HomeConfig extends StatelessWidget {
             children: [
               _buildHomeNavigator(),
               _buildShopNavigator(),
-              _buildBagNavigator(),
+              BagScreen(),
               _buildFavouriteNavigator(),
               _buildProfileNavigator()
             ],
@@ -191,21 +191,7 @@ class HomeConfig extends StatelessWidget {
 
 
 
-  Widget _buildBagNavigator() {
-    return Navigator(
-      key: bagNavigatorKey,
-      onGenerateRoute: (RouteSettings settings) {
-        switch (settings.name) {
-          case '/':
-            return MaterialPageRoute(
-              builder: (context) => BagScreen(),
-            );
-        }
-      },
-    );
-  }
 
-  final GlobalKey<NavigatorState> bagNavigatorKey = GlobalKey<NavigatorState>();
 
 
 }
