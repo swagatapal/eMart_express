@@ -30,6 +30,7 @@ class ProductDetailsScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(
             children: [
               CommonHeader(
@@ -146,6 +147,7 @@ class ProductDetailsScreen extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.33,
                 width: MediaQuery.of(context).size.width,
                 child: ListView.builder(
+                  physics: BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     itemCount: 10,
                     itemBuilder: (BuildContext context, int index) {
@@ -267,6 +269,7 @@ class ProductDetailsScreen extends StatelessWidget {
      showModalBottomSheet(
        context: context,
        backgroundColor: Colors.transparent,
+       isScrollControlled: true,
        builder: (BuildContext context) {
          return Consumer<ProductProvider>(
            builder: (context, sizeSelection, child) {
@@ -299,33 +302,35 @@ class ProductDetailsScreen extends StatelessWidget {
                      ),
                    ),
                    const SizedBox(height: 10),
-                   Container(
-                     width: MediaQuery.of(context).size.width,
-                     color: Colors.white,
-                     child: Padding(
-                       padding: const EdgeInsets.all(20),
-                       child: Wrap(
-                         spacing: 16.0,
-                         runSpacing: 8.0,
-                         children: sizes.map((size) {
-                           final isSelected = sizeSelection.isSelectedSizes(size);
-                           return ChoiceChip(
-                             label: Text(size),
-                             selected: isSelected,
-                             padding: EdgeInsets.only(left: 30, right: 30, top: 10, bottom: 10),
-                             onSelected: (selected) {
-                               sizeSelection.toggleSizes(size);
-                             },
-                             selectedColor: AppColors.red1,
-                             backgroundColor: AppColors.white,
-                             labelStyle: TextStyle(
-                               color: isSelected ? Colors.white : Colors.black,
-                               fontWeight: FontWeight.w700,
-                               fontFamily: "Roboto",
-                               fontSize: 14,
-                             ),
-                           );
-                         }).toList(),
+                   Expanded(
+                     child: Container(
+                       width: MediaQuery.of(context).size.width,
+                       color: Colors.white,
+                       child: Padding(
+                         padding: const EdgeInsets.all(20),
+                         child: Wrap(
+                           spacing: 16.0,
+                           runSpacing: 8.0,
+                           children: sizes.map((size) {
+                             final isSelected = sizeSelection.isSelectedSizes(size);
+                             return ChoiceChip(
+                               label: Text(size),
+                               selected: isSelected,
+                               padding: EdgeInsets.only(left: 30, right: 30, top: 10, bottom: 10),
+                               onSelected: (selected) {
+                                 sizeSelection.toggleSizes(size);
+                               },
+                               selectedColor: AppColors.red1,
+                               backgroundColor: AppColors.white,
+                               labelStyle: TextStyle(
+                                 color: isSelected ? Colors.white : Colors.black,
+                                 fontWeight: FontWeight.w700,
+                                 fontFamily: "Roboto",
+                                 fontSize: 14,
+                               ),
+                             );
+                           }).toList(),
+                         ),
                        ),
                      ),
                    ),

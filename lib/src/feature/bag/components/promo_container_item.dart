@@ -67,51 +67,60 @@ class PromoContainerItem extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Row(
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(offerType, style: TextStyle(
-                      fontFamily: "Roboto",
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.black1
-                    ),),
-                    const SizedBox(height: 5,),
-                    Text(promoCode, style: TextStyle(
-                        fontFamily: "Roboto",
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.black1
-                    ),),
-                  ],
-                ),
-                const SizedBox(width: 20,),
-                Column(
-                  children: [
-                    Text(remainingDate,textAlign: TextAlign.center, style: TextStyle(
-                        fontFamily: "Roboto",
-                        fontSize: 11,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.grey
-                    ),),
-                    const SizedBox(height: 5,),
-                    CommonButton(
-                      buttonHeight: 36,
-                      buttonWidth: MediaQuery.of(context).size.width*0.25,
-                      borderRadius: 25,
-                      labelColor: AppColors.white,
-                      label: "Apply",
-                      solidColor: AppColors.red1,
-                    )
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: Row(
+                children: [
+                  Flexible(
+                    flex: 2,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(offerType, style: TextStyle(
+                          fontFamily: "Roboto",
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.black1
+                        ),),
+                        const SizedBox(height: 5,),
+                        Text(promoCode, style: TextStyle(
+                            fontFamily: "Roboto",
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.black1
+                        ),),
+                      ],
+                    ),
+                  ),
 
-                  ],
-                ),
+                  const SizedBox(width: 10,),
+                  Flexible(
+                    flex: 2,
+                    child: Column(
+                      children: [
+                        Text(remainingDate,textAlign: TextAlign.center, style: TextStyle(
+                            fontFamily: "Roboto",
+                            fontSize: 11,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.grey
+                        ),),
+                        const SizedBox(height: 5,),
+                        CommonButton(
+                          buttonHeight: 36,
+                          buttonWidth: MediaQuery.of(context).size.width*0.25,
+                          borderRadius: 25,
+                          labelColor: AppColors.white,
+                          label: "Apply",
+                          solidColor: AppColors.red1,
+                        )
 
-              ],
+                      ],
+                    ),
+                  ),
+            
+                ],
+              ),
             ),
           )
         ],
