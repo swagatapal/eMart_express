@@ -28,7 +28,7 @@ class ShopCatalogTwoScreen extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.white1,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,6 +46,7 @@ class ShopCatalogTwoScreen extends StatelessWidget {
             SizedBox(
               height: 40,
               child: ListView.builder(
+                physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemCount: items.length,
                   itemBuilder: (BuildContext context, int index) {
@@ -77,6 +78,7 @@ class ShopCatalogTwoScreen extends StatelessWidget {
 
             Expanded(
               child: GridView.builder(
+                physics: BouncingScrollPhysics(),
                   itemCount: 10,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,

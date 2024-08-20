@@ -32,11 +32,13 @@ class ShopCategoryScreen extends StatelessWidget {
             CommonHeader(
                 text: "Categories",
                 isVisibleText: true,
-                icon: Icon(Icons.search, size: 30,),
-                isVisibleDivider: true
-            ),
+                icon: Icon(
+                  Icons.search,
+                  size: 30,
+                ),
+                isVisibleDivider: true),
             Padding(
-              padding: const EdgeInsets.only(top: 20.0,left: 20, right: 20),
+              padding: const EdgeInsets.only(top: 20.0, left: 20, right: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -48,39 +50,35 @@ class ShopCategoryScreen extends StatelessWidget {
                     buttonHeight: 48,
                     fontSize: 14,
                   ),
-                  const SizedBox(height: 30,),
-                  Text("Choose category",style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: "Roboto",
-                      color: AppColors.grey
-                  ), )
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Text(
+                    "Choose category",
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: "Roboto",
+                        color: AppColors.grey),
+                  )
                 ],
               ),
             ),
-            const SizedBox(height: 20,),
-
+            const SizedBox(
+              height: 20,
+            ),
             Expanded(
-              child: ListView.builder(
-                  itemCount: items.length,
-                  itemBuilder: (BuildContext context, int index){
-                    return ShopCategoryItem(
-                      text: items[index],
-                      onClicked: (){
-                        Navigator.pushNamed(context, '/shopCatalogOneScreen');
-                      },
-
-
-                    );
-                  })
-            )
-
-
-
-
-
-
-
+                child: ListView.builder(
+                    physics: BouncingScrollPhysics(),
+                    itemCount: items.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return ShopCategoryItem(
+                        text: items[index],
+                        onClicked: () {
+                          Navigator.pushNamed(context, '/shopCatalogOneScreen');
+                        },
+                      );
+                    }))
           ],
         ),
       ),

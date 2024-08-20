@@ -28,7 +28,7 @@ class HomeConfig extends StatelessWidget {
             children: [
               _buildHomeNavigator(),
               _buildShopNavigator(),
-              BagScreen(),
+              _buildBagNavigator(),
               _buildFavouriteNavigator(),
               _buildProfileNavigator()
             ],
@@ -71,7 +71,7 @@ class HomeConfig extends StatelessWidget {
             onTap: (index) {
               homeProvider.setSelectedIndex(index);
             },
-            backgroundColor: AppColors.white,
+            //backgroundColor: AppColors.white,
             elevation: 10.0,
           ),
         );
@@ -188,6 +188,24 @@ class HomeConfig extends StatelessWidget {
   }
 
   final GlobalKey<NavigatorState> favouriteNavigatorKey = GlobalKey<NavigatorState>();
+
+
+
+  Widget _buildBagNavigator() {
+    return Navigator(
+      key: bagNavigatorKey,
+      onGenerateRoute: (RouteSettings settings) {
+        switch (settings.name) {
+          case '/':
+            return MaterialPageRoute(
+              builder: (context) => BagScreen(),
+            );
+        }
+      },
+    );
+  }
+
+  final GlobalKey<NavigatorState> bagNavigatorKey = GlobalKey<NavigatorState>();
 
 
 }

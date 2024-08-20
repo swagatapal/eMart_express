@@ -30,6 +30,7 @@ class BrandSelectionScreen extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: ListView.builder(
+                  physics: BouncingScrollPhysics(),
                   itemCount: brand.length,
                   itemBuilder: (context, index) {
                     return BrandItem(text: brand[index]);

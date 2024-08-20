@@ -32,6 +32,7 @@ class WomenTab extends StatelessWidget {
     return SizedBox(
       width: MediaQuery.of(context).size.width,
       child: ListView.builder(
+        physics: BouncingScrollPhysics(),
           itemCount: items.length,
           itemBuilder: (BuildContext context, int index){
             final item = items[index];

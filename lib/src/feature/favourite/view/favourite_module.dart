@@ -44,6 +44,7 @@ class FavouriteModule extends StatelessWidget {
             SizedBox(
               height: 40,
               child: ListView.builder(
+                physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemCount: items.length,
                   itemBuilder: (BuildContext context, int index) {
@@ -73,6 +74,7 @@ class FavouriteModule extends StatelessWidget {
 
             Expanded(
               child: GridView.builder(
+                physics: BouncingScrollPhysics(),
                   itemCount: 10,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,

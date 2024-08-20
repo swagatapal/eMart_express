@@ -49,6 +49,7 @@ class FavouriteScreen extends StatelessWidget {
             SizedBox(
               height: 40,
               child: ListView.builder(
+                physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemCount: items.length,
                   itemBuilder: (BuildContext context, int index) {
@@ -79,6 +80,7 @@ class FavouriteScreen extends StatelessWidget {
             CustomDivider(),
             Expanded(
               child: ListView.builder(
+                physics: BouncingScrollPhysics(),
                   itemCount: 10,
                   itemBuilder: (BuildContext context, int index){
                     return index == 0? FavouriteVerticalListItem(

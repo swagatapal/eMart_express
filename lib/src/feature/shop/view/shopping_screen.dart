@@ -54,6 +54,7 @@ class ShoppingScreen extends StatelessWidget {
               ),
               Expanded(
                 child: TabBarView(
+                  //physics: BouncingScrollPhysics(),
                   children: const [
                     Center(
                       child: WomenTab()
