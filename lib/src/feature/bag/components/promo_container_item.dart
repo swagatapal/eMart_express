@@ -89,7 +89,7 @@ class PromoContainerItem extends StatelessWidget {
                     ),),
                   ],
                 ),
-                const SizedBox(width: 30,),
+                const SizedBox(width: 20,),
                 Column(
                   children: [
                     Text(remainingDate,textAlign: TextAlign.center, style: TextStyle(
