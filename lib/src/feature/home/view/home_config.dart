@@ -2,6 +2,7 @@ import 'package:emart_express/src/core/helper/app_colors.dart';
 import 'package:emart_express/src/feature/Home/controller/Home_controller.dart';
 import 'package:emart_express/src/feature/Home/view/home_main_page.dart';
 import 'package:emart_express/src/feature/bag/view/bag_screen.dart';
+import 'package:emart_express/src/feature/favourite/view/favourite_module.dart';
 import 'package:emart_express/src/feature/favourite/view/favourite_screen.dart';
 import 'package:emart_express/src/feature/home/view/home_second_main_page.dart';
 import 'package:emart_express/src/feature/home/view/home_third_main_page.dart';
@@ -27,8 +28,8 @@ class HomeConfig extends StatelessWidget {
             children: [
               _buildHomeNavigator(),
               _buildShopNavigator(),
-              BagScreen(),
-              FavouriteScreen(),
+              _buildBagNavigator(),
+              _buildFavouriteNavigator(),
               _buildProfileNavigator()
             ],
           ),
@@ -70,7 +71,7 @@ class HomeConfig extends StatelessWidget {
             onTap: (index) {
               homeProvider.setSelectedIndex(index);
             },
-            backgroundColor: AppColors.white,
+            //backgroundColor: AppColors.white,
             elevation: 10.0,
           ),
         );
@@ -163,6 +164,48 @@ class HomeConfig extends StatelessWidget {
 
   final GlobalKey<NavigatorState> profileNavigatorKey = GlobalKey<NavigatorState>();
 
+
+  Widget _buildFavouriteNavigator() {
+    return Navigator(
+      key: favouriteNavigatorKey,
+      onGenerateRoute: (RouteSettings settings) {
+        switch (settings.name) {
+          case '/':
+            return MaterialPageRoute(
+              builder: (context) => FavouriteScreen(),
+            );
+          case '/FavouriteModule':
+            return MaterialPageRoute(
+              builder: (context) => FavouriteModule(),
+            );
+          default:
+            return MaterialPageRoute(
+              builder: (context) => FavouriteScreen(),
+            );
+        }
+      },
+    );
+  }
+
+  final GlobalKey<NavigatorState> favouriteNavigatorKey = GlobalKey<NavigatorState>();
+
+
+
+  Widget _buildBagNavigator() {
+    return Navigator(
+      key: bagNavigatorKey,
+      onGenerateRoute: (RouteSettings settings) {
+        switch (settings.name) {
+          case '/':
+            return MaterialPageRoute(
+              builder: (context) => BagScreen(),
+            );
+        }
+      },
+    );
+  }
+
+  final GlobalKey<NavigatorState> bagNavigatorKey = GlobalKey<NavigatorState>();
 
 
 }

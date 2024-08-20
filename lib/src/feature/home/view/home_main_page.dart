@@ -11,6 +11,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           children: [
             Stack(children: [
@@ -62,6 +63,7 @@ class HomePage extends StatelessWidget {
               height: MediaQuery.of(context).size.height*0.33,
               width: MediaQuery.of(context).size.width,
               child: ListView.builder(
+                physics: BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                   itemCount: 10,
                   itemBuilder:(BuildContext context, int index){

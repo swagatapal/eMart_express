@@ -34,6 +34,7 @@ class BottomAppbar extends StatelessWidget {
               solidColor: AppColors.red1,
             )
           ],
-        ));
+        )
+    );
   }
 }

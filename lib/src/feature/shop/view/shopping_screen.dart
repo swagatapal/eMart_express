@@ -19,6 +19,7 @@ class ShoppingScreen extends StatelessWidget {
               CommonHeader(
                   text: "Categories",
                   isVisibleText: true,
+                  isVisibleBackIcon: false,
                   icon: Icon(
                     Icons.search,
                     size: 30,
@@ -53,6 +54,7 @@ class ShoppingScreen extends StatelessWidget {
               ),
               Expanded(
                 child: TabBarView(
+                  //physics: BouncingScrollPhysics(),
                   children: const [
                     Center(
                       child: WomenTab()

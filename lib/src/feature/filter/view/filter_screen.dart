@@ -39,6 +39,7 @@ class FilterScreen extends StatelessWidget {
       backgroundColor: AppColors.white1,
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -127,6 +128,8 @@ class FilterScreen extends StatelessWidget {
                             categorySelection.toggleCategory(category),
                         selectedColor: AppColors.red1,
                         backgroundColor: AppColors.white,
+                        showCheckmark: true,
+                        checkmarkColor:AppColors.white1 ,
                         labelStyle: TextStyle(
                             color: isSelected ? Colors.white : Colors.black,
                             fontWeight: FontWeight.w700,
