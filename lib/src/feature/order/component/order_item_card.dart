@@ -124,6 +124,7 @@ class OrderItemCard extends StatelessWidget {
                       ],
                     ),
                   ),
+
                   RichText(
                     text: TextSpan(
                       children: [

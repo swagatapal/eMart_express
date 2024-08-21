@@ -2,8 +2,7 @@ import 'package:emart_express/src/core/common_components/common_header.dart';
 import 'package:emart_express/src/core/common_components/common_header_text.dart';
 import 'package:emart_express/src/core/helper/app_colors.dart';
 import 'package:flutter/material.dart';
-
-import '../../shop/component/catalog_two_filter_item.dart';
+import '../component/order_filter_item.dart';
 import '../component/order_item_card.dart';
 
 class MyOrderScreen extends StatelessWidget {
@@ -44,9 +43,10 @@ class MyOrderScreen extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemCount: items.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return CatalogTwoFilterItem(
+                      return OrderFilterItem(
                         text: items[index],
                       );
+                      // return SizedBox();
                     }),
               ),
               SizedBox(height: 20.0),
