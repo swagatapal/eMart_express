@@ -65,7 +65,7 @@ class MyOrderScreen extends StatelessWidget {
                             date: "05-12-2019",
                             orderNo: "1546451",
                             quantity: "2",
-                            totalAmount: "112 \$",
+                            totalAmount: "112\$",
                             trackingNumber: "IWQ2546532456",
                           ),
                         );
