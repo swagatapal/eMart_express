@@ -25,7 +25,6 @@ class OrderItemCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Container(
         width: MediaQuery.of(context).size.width,
-        // height: MediaQuery.of(context).size.height * 0.2,
         decoration: BoxDecoration(
             color: AppColors.white1,
             borderRadius: BorderRadius.circular(10),

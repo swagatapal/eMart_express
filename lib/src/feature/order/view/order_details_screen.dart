@@ -36,7 +36,6 @@ class OrderDetailsScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
-                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         RichText(
@@ -45,7 +44,7 @@ class OrderDetailsScreen extends StatelessWidget {
                               TextSpan(
                                 text: 'Order No: ',
                                 style: TextStyle(
-                                  color: Colors.black,
+                                  color: AppColors.black1,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 14.0,
                                 ),
@@ -53,7 +52,7 @@ class OrderDetailsScreen extends StatelessWidget {
                               TextSpan(
                                 text: "32156465",
                                 style: TextStyle(
-                                  color: Colors.black,
+                                  color: AppColors.black1,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 14.0,
                                 ),
@@ -68,7 +67,7 @@ class OrderDetailsScreen extends StatelessWidget {
                               TextSpan(
                                 text: 'Tracking number: ',
                                 style: TextStyle(
-                                  color: Colors.black,
+                                  color: AppColors.grey,
                                   fontWeight: FontWeight.normal,
                                   fontSize: 14.0,
                                 ),
@@ -94,7 +93,7 @@ class OrderDetailsScreen extends StatelessWidget {
                           Text(
                             "15-02-2019",
                             style: TextStyle(
-                              color: Colors.black,
+                              color: AppColors.grey,
                               fontWeight: FontWeight.normal,
                               fontSize: 14.0,
                             ),
@@ -145,7 +144,7 @@ class OrderDetailsScreen extends StatelessWidget {
                 ),
             
                 Column(
-                  children: const [
+                  children: [
                     OrderInformation(
                       text1: "Shipping Address: ",
                       text2: "3 New Bridge Court, Chino Hills, CA 91709, United States",
@@ -154,6 +153,7 @@ class OrderDetailsScreen extends StatelessWidget {
                     OrderInformation(
                       text1: "Payment method: ",
                       text2: "**** **** **** 3947",
+                      isImageVisible: true,
                     ),
                     SizedBox(height: 20.0,),
                     OrderInformation(
