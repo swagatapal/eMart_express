@@ -151,10 +151,4 @@ class BagScreen extends StatelessWidget {
       },
     );
   }
-
-
-
-
-
-
 }

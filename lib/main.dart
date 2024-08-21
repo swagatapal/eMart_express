@@ -4,6 +4,7 @@ import 'package:emart_express/src/feature/auth/controller/auth_controller.dart';
 import 'package:emart_express/src/feature/bag/controller/bag_controller.dart';
 import 'package:emart_express/src/feature/favourite/controller/favourite_controller.dart';
 import 'package:emart_express/src/feature/filter/controller/filter_controller.dart';
+import 'package:emart_express/src/feature/order/controller/order_controller.dart';
 import 'package:emart_express/src/feature/productCard/controller/product_controller.dart';
 import 'package:emart_express/src/feature/shop/controller/shop_controller.dart';
 import 'package:emart_express/src/feature/splash/controller/splash_controller.dart';
@@ -57,6 +58,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => BagProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => OrderProvider(),
         ),
       ],
       child: MaterialApp(

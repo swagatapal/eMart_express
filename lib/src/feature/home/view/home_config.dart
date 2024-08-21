@@ -6,6 +6,7 @@ import 'package:emart_express/src/feature/favourite/view/favourite_module.dart';
 import 'package:emart_express/src/feature/favourite/view/favourite_screen.dart';
 import 'package:emart_express/src/feature/home/view/home_second_main_page.dart';
 import 'package:emart_express/src/feature/home/view/home_third_main_page.dart';
+import 'package:emart_express/src/feature/order/view/order_details_screen.dart';
 import 'package:emart_express/src/feature/profile/view/profile_screen.dart';
 import 'package:emart_express/src/feature/shop/view/shop_catalog_one_screen.dart';
 import 'package:emart_express/src/feature/shop/view/shop_catalog_two_screen.dart';
@@ -153,6 +154,11 @@ class HomeConfig extends StatelessWidget {
           case '/MyOrderScreen':
             return MaterialPageRoute(
               builder: (context) => MyOrderScreen(),
+            );
+
+          case '/OrderDetailsScreen':
+            return MaterialPageRoute(
+              builder: (context) => OrderDetailsScreen(),
             );
           default:
             return MaterialPageRoute(

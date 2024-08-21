@@ -10,32 +10,29 @@ class MyOrderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    final List<String> items = [
-      "Delivered",
-      "Processing",
-      "Cancelled"
-    ];
+    final List<String> items = ["Delivered", "Processing", "Cancelled"];
 
     return Scaffold(
       backgroundColor: AppColors.white1,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment:CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CommonHeader(
-                  text: "",
-                  isVisibleText: false,
-                  isVisibleDivider: false,
-                  icon: Icon(Icons.search, size: 30,),
+                text: "",
+                isVisibleText: false,
+                isVisibleDivider: false,
+                icon: Icon(
+                  Icons.search,
+                  size: 30,
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 16.0),
                 child: CommonHeaderText(text: "My Orders"),
               ),
               SizedBox(height: 20.0),
-
               SizedBox(
                 height: 40,
                 child: ListView.builder(
@@ -46,11 +43,9 @@ class MyOrderScreen extends StatelessWidget {
                       return OrderFilterItem(
                         text: items[index],
                       );
-                      // return SizedBox();
                     }),
               ),
               SizedBox(height: 20.0),
-
               Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -67,10 +62,12 @@ class MyOrderScreen extends StatelessWidget {
                             quantity: "2",
                             totalAmount: "112\$",
                             trackingNumber: "IWQ2546532456",
+                            onClicked: () {
+                              Navigator.pushNamed(context,  '/OrderDetailsScreen');
+                            }
                           ),
                         );
-                    }
-                  ),
+                      }),
                 ],
               )
             ],

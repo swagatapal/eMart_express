@@ -26,7 +26,7 @@ class LogIn extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CommonAuthHeader(
-                  isVisible: true,
+                  isVisible: false,
                   text: "Login",
                 ),
                 SizedBox(height: ScreenUtils().screenHeight(context) * 0.1),

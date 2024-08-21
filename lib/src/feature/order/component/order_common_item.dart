@@ -1,22 +1,20 @@
-import 'package:emart_express/src/core/helper/app_colors.dart';
-import 'package:emart_express/src/feature/bag/components/icon_button_container.dart';
-import 'package:emart_express/src/feature/bag/controller/bag_controller.dart';
-import 'package:emart_express/src/feature/bag/model/bag_item_model.dart';
 import 'package:flutter/material.dart';
+
+import '../../../core/helper/app_colors.dart';
+import '../controller/order_controller.dart';
+import '../model/order_item_model.dart';
 import 'package:provider/provider.dart';
 
-class MyBagCommonItem extends StatelessWidget {
+class OrderCommonItem extends StatelessWidget {
   late Function()? onClicked;
-  final BagItem item;
-
-   MyBagCommonItem(
-      {super.key, required this.item,this.onClicked});
+  final OrderItem item;
+  OrderCommonItem({super.key, required this.item, this.onClicked});
 
   @override
   Widget build(BuildContext context) {
-    final bagProvider = Provider.of<BagProvider>(context, listen: false);
+    final orderProvider = Provider.of<OrderProvider>(context, listen: false);
     return Padding(
-      padding: const EdgeInsets.only(left: 20.0, right: 20, top: 20),
+      padding: const EdgeInsets.only(right: 20, bottom: 20),
       child: Stack(
         clipBehavior: Clip.none,
         children: [
@@ -24,8 +22,8 @@ class MyBagCommonItem extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height*0.15,
             decoration: BoxDecoration(
-              color: AppColors.white,
-              borderRadius: BorderRadius.circular(10),
+                color: AppColors.white,
+                borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
                     color: AppColors.grey.withOpacity(0.25), // Shadow color
@@ -34,7 +32,6 @@ class MyBagCommonItem extends StatelessWidget {
                     spreadRadius: 0, // Spread radius
                   ),
                 ]
-
             ),
             child: Row(
               children: [
@@ -120,36 +117,36 @@ class MyBagCommonItem extends StatelessWidget {
                             width: MediaQuery.of(context).size.width * 0.45,
                             child: Row(
                               children: [
-                                IconButtonContainer(
-                                  icon: Icons.remove,
-                                  onClicked: (){
-                                    bagProvider.decrementItem(item.id);                                  },
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Text(
-                                  item.itemCount.toString(),
-                                  style: TextStyle(
-                                      fontSize: 14,
-                                      fontFamily: "Roboto",
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.black1),
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                IconButtonContainer(
-                                  icon: Icons.add,
-                                  onClicked: (){
-                                    bagProvider.incrementItem(item.id);
-                                  },
+
+                                RichText(
+                                  text: TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text: 'Units: ',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          color: AppColors.grey,
+                                          fontSize: 11.0,
+                                          fontFamily: "Roboto",
+                                        ),
+                                      ),
+                                      TextSpan(
+                                        text: item.itemCount.toString(),
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 11.0,
+                                          fontFamily: "Roboto",
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ],
                             ),
                           ),
                           Text(
-                              "${item.itemCount * item.pricePerItem}\$",
+                            "${item.itemCount * item.pricePerItem}\$",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontFamily: "Roboto",
@@ -164,37 +161,7 @@ class MyBagCommonItem extends StatelessWidget {
               ],
             ),
           ),
-          Positioned(
-              top: 10,
-              right: 10,
-              child:PopupMenuButton<String>(
-                icon: Icon(Icons.more_vert, size: 20, color: AppColors.grey),
-                onSelected: (value) {
-
-                },
-                color: AppColors.white,
-                itemBuilder: (BuildContext context) {
-                  return [
-                    _buildPopupMenuItem('Add to favourites'),
-                    PopupMenuDivider(height: 1,),
-                    _buildPopupMenuItem('Delete from the list'),
-                  ];
-                },
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-              ),
-    )
         ],
-      ),
-    );
-  }
-  PopupMenuItem<String> _buildPopupMenuItem(String text) {
-    return PopupMenuItem<String>(
-      value: text,
-      child: Container(
-        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-        child: Text(text,textAlign: TextAlign.center, style: TextStyle(fontSize: 16, fontFamily: "Roboto", color: AppColors.black1)),
       ),
     );
   }

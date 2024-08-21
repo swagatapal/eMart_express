@@ -8,9 +8,11 @@ class OrderItemCard extends StatelessWidget {
   final String trackingNumber;
   final String quantity;
   final String totalAmount;
+  late Function()? onClicked;
 
-  const OrderItemCard(
+  OrderItemCard(
       {super.key,
+      this.onClicked,
       required this.orderNo,
       required this.date,
       required this.trackingNumber,
@@ -23,7 +25,7 @@ class OrderItemCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Container(
         width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height * 0.22,
+        // height: MediaQuery.of(context).size.height * 0.2,
         decoration: BoxDecoration(
             color: AppColors.white1,
             borderRadius: BorderRadius.circular(10),
@@ -52,6 +54,7 @@ class OrderItemCard extends StatelessWidget {
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: 14.0,
+                            fontFamily: "Roboto",
                           ),
                         ),
                         TextSpan(
@@ -60,6 +63,7 @@ class OrderItemCard extends StatelessWidget {
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: 14.0,
+                            fontFamily: "Roboto",
                           ),
                         ),
                       ],
@@ -71,6 +75,7 @@ class OrderItemCard extends StatelessWidget {
                       color: Colors.black,
                       fontWeight: FontWeight.normal,
                       fontSize: 14.0,
+                      fontFamily: "Roboto",
                     ),
                   ),
                 ],
@@ -85,6 +90,7 @@ class OrderItemCard extends StatelessWidget {
                         color: Colors.black,
                         fontWeight: FontWeight.normal,
                         fontSize: 14.0,
+                        fontFamily: "Roboto",
                       ),
                     ),
                     TextSpan(
@@ -93,6 +99,7 @@ class OrderItemCard extends StatelessWidget {
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
                         fontSize: 14.0,
+                        fontFamily: "Roboto",
                       ),
                     ),
                   ],
@@ -111,6 +118,7 @@ class OrderItemCard extends StatelessWidget {
                             color: Colors.black,
                             fontWeight: FontWeight.normal,
                             fontSize: 14.0,
+                            fontFamily: "Roboto",
                           ),
                         ),
                         TextSpan(
@@ -119,12 +127,12 @@ class OrderItemCard extends StatelessWidget {
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: 14.0,
+                            fontFamily: "Roboto",
                           ),
                         ),
                       ],
                     ),
                   ),
-
                   RichText(
                     text: TextSpan(
                       children: [
@@ -134,6 +142,7 @@ class OrderItemCard extends StatelessWidget {
                             color: Colors.black,
                             fontWeight: FontWeight.normal,
                             fontSize: 14.0,
+                            fontFamily: "Roboto",
                           ),
                         ),
                         TextSpan(
@@ -142,6 +151,7 @@ class OrderItemCard extends StatelessWidget {
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: 14.0,
+                            fontFamily: "Roboto",
                           ),
                         ),
                       ],
@@ -149,27 +159,36 @@ class OrderItemCard extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 8.0),
+              const SizedBox(height: 20.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 1.5,
+                  InkWell(
+                    onTap: onClicked,
+                    child: Container(
+
+                      padding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 18.0),
+                      decoration: BoxDecoration(
+                          color: AppColors.white,
+                        borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.grey.withOpacity(0.25), // Shadow color
+                              offset: Offset(0, 4), // X and Y offsets
+                              blurRadius: 8, // Blur radius
+                              spreadRadius: 0, // Spread radius
+                            ),
+                          ]
                       ),
-                    ),
-                    child: Text(
-                      "Details",
-                      style: TextStyle(
-                          fontWeight: FontWeight.normal,
-                          fontSize: 16,
-                          color: AppColors.black1,
-                          fontFamily: "Roboto"),
+                      child: Text(
+                        "Details",
+                        style: TextStyle(
+                            fontWeight: FontWeight.normal,
+                            fontSize: 16,
+                            color: AppColors.black1,
+                            fontFamily: "Roboto",
+                        ),
+                      ),
                     ),
                   ),
                   Text(
@@ -178,6 +197,7 @@ class OrderItemCard extends StatelessWidget {
                       color: Colors.green,
                       fontWeight: FontWeight.normal,
                       fontSize: 16.0,
+                      fontFamily: "Roboto",
                     ),
                   )
                 ],

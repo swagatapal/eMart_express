@@ -21,8 +21,8 @@ class CommonHeader extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.only(
-            left: 20.0,
-            right: 20,
+            left: 10,
+            right: 10,
             bottom: 10,
             top: 10,
           ),

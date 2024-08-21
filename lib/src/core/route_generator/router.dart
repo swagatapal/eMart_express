@@ -7,6 +7,7 @@ import 'package:emart_express/src/feature/auth/view/signin.dart';
 import 'package:emart_express/src/feature/checkout/view/checkout_screen.dart';
 import 'package:emart_express/src/feature/filter/view/brand_selection_screen.dart';
 import 'package:emart_express/src/feature/filter/view/filter_screen.dart';
+import 'package:emart_express/src/feature/order/view/order_details_screen.dart';
 import 'package:emart_express/src/feature/payment/view/payment_method_screen.dart';
 import 'package:emart_express/src/feature/productCard/view/product_details_screen.dart';
 import 'package:emart_express/src/feature/visualSearch/view/crop_item.dart';
@@ -87,6 +88,7 @@ class AppRouter {
 
       case AppRoutes.paymentMethodScreen:
         return MaterialPageRoute(builder: (context) =>  PaymentMethodScreen());
+
         // case AppRoutes.details:
     //   final args = settings.arguments as String?;
     //   return MaterialPageRoute(
