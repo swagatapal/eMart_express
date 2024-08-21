@@ -16,6 +16,7 @@ class MyOrderScreen extends StatelessWidget {
       backgroundColor: AppColors.white1,
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

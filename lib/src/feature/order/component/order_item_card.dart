@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:bounce/bounce.dart';
 import '../../../core/helper/app_colors.dart';
 
 class OrderItemCard extends StatelessWidget {
@@ -72,7 +72,7 @@ class OrderItemCard extends StatelessWidget {
                   Text(
                     date,
                     style: TextStyle(
-                      color: Colors.black,
+                      color: AppColors.grey,
                       fontWeight: FontWeight.normal,
                       fontSize: 14.0,
                       fontFamily: "Roboto",
@@ -87,7 +87,7 @@ class OrderItemCard extends StatelessWidget {
                     TextSpan(
                       text: 'Tracking number: ',
                       style: TextStyle(
-                        color: Colors.black,
+                        color: AppColors.grey,
                         fontWeight: FontWeight.normal,
                         fontSize: 14.0,
                         fontFamily: "Roboto",
@@ -105,7 +105,7 @@ class OrderItemCard extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 8.0),
+              const SizedBox(height: 10.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -115,7 +115,7 @@ class OrderItemCard extends StatelessWidget {
                         TextSpan(
                           text: 'Quantity: ',
                           style: TextStyle(
-                            color: Colors.black,
+                            color: AppColors.grey,
                             fontWeight: FontWeight.normal,
                             fontSize: 14.0,
                             fontFamily: "Roboto",
@@ -139,7 +139,7 @@ class OrderItemCard extends StatelessWidget {
                         TextSpan(
                           text: 'Total Amount: ',
                           style: TextStyle(
-                            color: Colors.black,
+                            color: AppColors.grey,
                             fontWeight: FontWeight.normal,
                             fontSize: 14.0,
                             fontFamily: "Roboto",
@@ -165,28 +165,31 @@ class OrderItemCard extends StatelessWidget {
                 children: [
                   InkWell(
                     onTap: onClicked,
-                    child: Container(
+                    child: Bounce(
+                      duration: const Duration(milliseconds: 200),
+                      child: Container(
 
-                      padding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 18.0),
-                      decoration: BoxDecoration(
-                          color: AppColors.white,
-                        borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(
-                              color: AppColors.grey.withOpacity(0.25), // Shadow color
-                              offset: Offset(0, 4), // X and Y offsets
-                              blurRadius: 8, // Blur radius
-                              spreadRadius: 0, // Spread radius
-                            ),
-                          ]
-                      ),
-                      child: Text(
-                        "Details",
-                        style: TextStyle(
-                            fontWeight: FontWeight.normal,
-                            fontSize: 16,
-                            color: AppColors.black1,
-                            fontFamily: "Roboto",
+                        padding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 18.0),
+                        decoration: BoxDecoration(
+                            color: AppColors.white,
+                          borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                color: AppColors.grey.withOpacity(0.25), // Shadow color
+                                offset: Offset(0, 4), // X and Y offsets
+                                blurRadius: 8, // Blur radius
+                                spreadRadius: 0, // Spread radius
+                              ),
+                            ]
+                        ),
+                        child: Text(
+                          "Details",
+                          style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontSize: 16,
+                              color: AppColors.black1,
+                              fontFamily: "Roboto",
+                          ),
                         ),
                       ),
                     ),

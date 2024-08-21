@@ -19,6 +19,7 @@ class OrderDetailsScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(left: 20.0),
           child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
