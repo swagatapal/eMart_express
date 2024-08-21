@@ -6,10 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class MyBagCommonItem extends StatelessWidget {
+  late Function()? onClicked;
   final BagItem item;
 
-  const MyBagCommonItem(
-      {super.key, required this.item,
+   MyBagCommonItem(
+      {super.key, required this.item,this.onClicked
 
       });
 
@@ -166,8 +167,39 @@ class MyBagCommonItem extends StatelessWidget {
               ],
             ),
           ),
+          Positioned(
+              top: 10,
+              right: 10,
+              child:PopupMenuButton<String>(
+                icon: Icon(Icons.more_vert, size: 20, color: AppColors.grey),
+                onSelected: (value) {
+
+                },
+                color: AppColors.white,
+                itemBuilder: (BuildContext context) {
+                  return [
+                    _buildPopupMenuItem('Add to favourites'),
+                    PopupMenuDivider(height: 1,),
+                    _buildPopupMenuItem('Delete from the list'),
+                  ];
+                },
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+              ),
+    )
         ],
       ),
     );
   }
+  PopupMenuItem<String> _buildPopupMenuItem(String text) {
+    return PopupMenuItem<String>(
+      value: text,
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+        child: Text(text,textAlign: TextAlign.center, style: TextStyle(fontSize: 16, fontFamily: "Roboto", color: AppColors.black1)),
+      ),
+    );
+  }
+
 }

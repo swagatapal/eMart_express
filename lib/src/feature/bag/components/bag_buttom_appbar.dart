@@ -7,8 +7,9 @@ import 'package:provider/provider.dart';
 
 class BagButtomAppbar extends StatelessWidget {
   late Function()? onClicked;
+  late Function()? onButtonClicked;
 
-   BagButtomAppbar({super.key, this.onClicked});
+   BagButtomAppbar({super.key, this.onClicked, this.onButtonClicked});
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +43,7 @@ class BagButtomAppbar extends StatelessWidget {
             const SizedBox(height: 20,),
             Expanded(
               child: CommonButton(
+                onClicked: onButtonClicked,
                 buttonHeight: 48,
                 borderRadius: 25,
                 label: "CHECK OUT",

@@ -4,8 +4,10 @@ import 'package:emart_express/src/feature/Home/view/home_config.dart';
 import 'package:emart_express/src/feature/auth/view/forgotPassword.dart';
 import 'package:emart_express/src/feature/auth/view/login.dart';
 import 'package:emart_express/src/feature/auth/view/signin.dart';
+import 'package:emart_express/src/feature/checkout/view/checkout_screen.dart';
 import 'package:emart_express/src/feature/filter/view/brand_selection_screen.dart';
 import 'package:emart_express/src/feature/filter/view/filter_screen.dart';
+import 'package:emart_express/src/feature/payment/view/payment_method_screen.dart';
 import 'package:emart_express/src/feature/productCard/view/product_details_screen.dart';
 import 'package:emart_express/src/feature/visualSearch/view/crop_item.dart';
 import 'package:emart_express/src/feature/visualSearch/view/search_by_taking_photo.dart';
@@ -27,7 +29,8 @@ class AppRoutes {
   static const String filterScreen = '/FilterScreen';
   static const String brandSelectionScreen = '/BrandSelectionScreen';
   static const String productDetailsScreen = '/ProductDetailsScreen';
-
+  static const String checkoutScreen = '/CheckoutScreen';
+  static const String paymentMethodScreen = '/PaymentMethodScreen';
 
 
 }
@@ -79,6 +82,11 @@ class AppRouter {
       case AppRoutes.productDetailsScreen:
         return MaterialPageRoute(builder: (context) =>  ProductDetailsScreen());
 
+      case AppRoutes.checkoutScreen:
+        return MaterialPageRoute(builder: (context) =>  CheckoutScreen());
+
+      case AppRoutes.paymentMethodScreen:
+        return MaterialPageRoute(builder: (context) =>  PaymentMethodScreen());
         // case AppRoutes.details:
     //   final args = settings.arguments as String?;
     //   return MaterialPageRoute(

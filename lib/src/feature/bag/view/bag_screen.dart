@@ -44,13 +44,18 @@ class BagScreen extends StatelessWidget {
                   itemCount: bagProvider.items.length,
                   itemBuilder: (BuildContext context, int index) {
                     final item = bagProvider.items[index];
-                    return MyBagCommonItem(item: item);
+                    return MyBagCommonItem(item: item,
+                    onClicked: (){
+                    },);
                   }),
             ),
           ],
         ),
       ),
       bottomNavigationBar: BagButtomAppbar(
+        onButtonClicked: (){
+          Navigator.pushNamed(context, '/CheckoutScreen');
+        },
         onClicked: () {
           showCustomModalBottomSheetOfferList(context);
         },
@@ -146,4 +151,10 @@ class BagScreen extends StatelessWidget {
       },
     );
   }
+
+
+
+
+
+
 }
