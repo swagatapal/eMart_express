@@ -33,30 +33,30 @@ class CommonTextFormField extends StatefulWidget {
 
   CommonTextFormField(
       {this.controller,
-        super.key,
-        this.labelText,
-        this.hintText = "",
-        this.readOnly = false,
-        this.textInputAction = TextInputAction.next,
-        this.textInputType = TextInputType.text,
-        this.obscureText = false,
-        this.fillColors = Colors.transparent,
-        this.suffixIcon,
-        this.textAlign = TextAlign.start,
-        this.onValueChanged,
-        this.onTap,
-        this.onValidator,
-        this.decoration,
-        this.maxLine = 1,
-        this.isProgressSuffix,
-        this.onSuffixClick,
-        this.onSave,
-        this.isEnable,
-        this.initialValue,
-        this.focusNode,
-        this.maxLength,
-        this.inputFormatters,
-        this.onSuffixClickWithValue});
+      super.key,
+      this.labelText,
+      this.hintText = "",
+      this.readOnly = false,
+      this.textInputAction = TextInputAction.next,
+      this.textInputType = TextInputType.text,
+      this.obscureText = false,
+      this.fillColors = Colors.transparent,
+      this.suffixIcon,
+      this.textAlign = TextAlign.start,
+      this.onValueChanged,
+      this.onTap,
+      this.onValidator,
+      this.decoration,
+      this.maxLine = 1,
+      this.isProgressSuffix,
+      this.onSuffixClick,
+      this.onSave,
+      this.isEnable,
+      this.initialValue,
+      this.focusNode,
+      this.maxLength,
+      this.inputFormatters,
+      this.onSuffixClickWithValue});
 
   @override
   State<CommonTextFormField> createState() => _CommonTextFormFieldState();
@@ -99,12 +99,12 @@ class _CommonTextFormFieldState extends State<CommonTextFormField> {
                   AppDecoration.sFormField.copyWith(
                       errorBorder: OutlineInputBorder(
                         borderSide:
-                        const BorderSide(color: Colors.red, width: 2.0),
+                            const BorderSide(color: Colors.red, width: 2.0),
                         borderRadius: BorderRadius.circular(6),
                       ),
                       focusedErrorBorder: OutlineInputBorder(
                         borderSide:
-                        const BorderSide(color: Colors.red, width: 2.0),
+                            const BorderSide(color: Colors.red, width: 2.0),
                         borderRadius: BorderRadius.circular(6),
                       ),
                       enabledBorder: OutlineInputBorder(
@@ -122,7 +122,7 @@ class _CommonTextFormFieldState extends State<CommonTextFormField> {
                       labelText: widget.labelText,
                       hintText: widget.hintText,
                       labelStyle:
-                      const TextStyle(color: AppColors.colorSecondaryText2),
+                          const TextStyle(color: AppColors.colorSecondaryText2),
                       border: InputBorder.none,
                       alignLabelWithHint: true,
                       isDense: true,
@@ -133,28 +133,28 @@ class _CommonTextFormFieldState extends State<CommonTextFormField> {
                       ),
                       suffixIcon: widget.suffixIcon != null
                           ? InkWell(
-                        onTap: () {
-                          FocusScopeNode currentFocus =
-                          FocusScope.of(context);
-                          if (!currentFocus.hasPrimaryFocus) {
-                            currentFocus.unfocus();
-                          }
-                          if (widget.onSuffixClick != null) {
-                            widget.onSuffixClick!();
-                          }
-                          if (widget.onSuffixClickWithValue != null) {
-                            widget.onSuffixClickWithValue!(textValue);
-                          }
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.only(right: 10.0),
-                          child: EmartIcon(
-                            iconName: widget.suffixIcon,
-                            width: 23,
-                            height: 23,
-                          ),
-                        ),
-                      )
+                              onTap: () {
+                                FocusScopeNode currentFocus =
+                                    FocusScope.of(context);
+                                if (!currentFocus.hasPrimaryFocus) {
+                                  currentFocus.unfocus();
+                                }
+                                if (widget.onSuffixClick != null) {
+                                  widget.onSuffixClick!();
+                                }
+                                if (widget.onSuffixClickWithValue != null) {
+                                  widget.onSuffixClickWithValue!(textValue);
+                                }
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 10.0),
+                                child: EmartIcon(
+                                  iconName: widget.suffixIcon,
+                                  width: 23,
+                                  height: 23,
+                                ),
+                              ),
+                            )
                           : null),
               onChanged: (value) {
                 textValue = value;
