@@ -173,7 +173,7 @@ class SettingsScreen extends StatelessWidget {
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent, // Makes the sheet's background transparent
-      isScrollControlled: true, // Allows the bottom sheet to take up more space
+      isScrollControlled: false, // Allows the bottom sheet to take up more space
       builder: (BuildContext context) {
         return DraggableScrollableSheet(
           expand: false, // Ensures the sheet is not full screen initially
