@@ -183,7 +183,7 @@ class OrderItemCard extends StatelessWidget {
                       child: Text(
                         "Details",
                         style: TextStyle(
-                            fontWeight: FontWeight.normal,
+                            fontWeight: FontWeight.w500,
                             fontSize: 16,
                             color: AppColors.black1,
                             fontFamily: "Roboto",

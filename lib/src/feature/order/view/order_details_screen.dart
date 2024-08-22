@@ -1,3 +1,4 @@
+import 'package:emart_express/src/core/common_components/common_button.dart';
 import 'package:emart_express/src/core/helper/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -113,8 +114,7 @@ class OrderDetailsScreen extends StatelessWidget {
                   ],
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsets.only(top: 24.0, bottom: 16.0),
+                  padding: const EdgeInsets.only(top: 24.0, bottom: 16.0),
                   child: Text(
                     "3 items",
                     style: TextStyle(
@@ -124,7 +124,7 @@ class OrderDetailsScreen extends StatelessWidget {
                   ),
                 ),
                 ListView.builder(
-                  shrinkWrap: true,
+                    shrinkWrap: true,
                     physics: BouncingScrollPhysics(),
                     itemCount: orderProvider.items.length,
                     itemBuilder: (BuildContext context, int index) {
@@ -142,37 +142,77 @@ class OrderDetailsScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-            
                 Column(
                   children: [
                     OrderInformation(
                       text1: "Shipping Address: ",
-                      text2: "3 New Bridge Court, Chino Hills, CA 91709, United States",
+                      text2:
+                          "3 New Bridge Court, Chino Hills, CA 91709, United States",
                     ),
-                    SizedBox(height: 20.0,),
+                    SizedBox(
+                      height: 20.0,
+                    ),
                     OrderInformation(
                       text1: "Payment method: ",
                       text2: "**** **** **** 3947",
                       isImageVisible: true,
                     ),
-                    SizedBox(height: 20.0,),
+                    SizedBox(
+                      height: 20.0,
+                    ),
                     OrderInformation(
                       text1: "Delivery method: ",
                       text2: "FedEx, 3 days, 15\$",
                     ),
-                    SizedBox(height: 20.0,),
+                    SizedBox(
+                      height: 20.0,
+                    ),
                     OrderInformation(
                       text1: "Discount: ",
                       text2: "10%, Personal promo code",
                     ),
-                    SizedBox(height: 20.0,),
+                    SizedBox(
+                      height: 20.0,
+                    ),
                     OrderInformation(
                       text1: "Total Amount: ",
                       text2: "133\$",
                     ),
-                    SizedBox(height: 20.0,),
+                    SizedBox(
+                      height: 20.0,
+                    ),
                   ],
-                )
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 16.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CommonButton(
+                        label: "Reorder",
+                        labelColor: AppColors.black1,
+                        solidColor: AppColors.white1,
+                        borderRadius: 25,
+                        buttonHeight: 48,
+                        buttonWidth: MediaQuery.of(context).size.width*0.4,
+                        borderColor: AppColors.black1,
+                        isBorderShadowVisible: false,
+                      ),
+                      SizedBox(width: 5.0),
+                      CommonButton(
+                        label: "Leave Feedback",
+                        labelColor: AppColors.white,
+                        solidColor: AppColors.red1,
+                        borderRadius: 25,
+                        buttonHeight: 48,
+                        buttonWidth:  MediaQuery.of(context).size.width*0.4,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 30.0,
+                ),
               ],
             ),
           ),

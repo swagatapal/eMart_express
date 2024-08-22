@@ -34,28 +34,32 @@ class LogIn extends StatelessWidget {
                 CommonTextFormField(
                   controller: authController.emailController,
                   labelText: "Email",
-                  suffixIcon: authController.isEmailValid ? "correct_icon" : null,
+                  suffixIcon:
+                      authController.isEmailValid ? "correct_icon" : null,
                   onValueChanged: (value) => authController.updateEmail(),
-
                 ),
                 const SizedBox(height: 20),
                 CommonTextFormField(
                   controller: authController.passwordController,
                   labelText: "Password",
-                  suffixIcon: authController.isPasswordValid ? "correct_icon" : null,
+                  suffixIcon:
+                      authController.isPasswordValid ? "correct_icon" : null,
                   onValueChanged: (value) => authController.updatePassword(),
-
                 ),
-                const SizedBox(height: 20,),
+                const SizedBox(
+                  height: 20,
+                ),
                 CommonText(
                   text: "Forgot your password ?",
-                  onClicked: (){
+                  onClicked: () {
                     Navigator.pushNamed(context, '/ForgotPassword');
                   },
                 ),
-                const SizedBox(height: 36,),
+                const SizedBox(
+                  height: 36,
+                ),
                 CommonButton(
-                  onClicked: (){
+                  onClicked: () {
                     Navigator.pushNamed(context, '/VisualSearch');
                   },
                   solidColor: AppColors.red,
@@ -63,7 +67,9 @@ class LogIn extends StatelessWidget {
                   buttonHeight: 48,
                   borderRadius: 25,
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height*0.25,),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.1,
+                ),
                 CommonSocialLogin(
                   text: "Or login with social account",
                 ),

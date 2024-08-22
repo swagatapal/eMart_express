@@ -19,11 +19,14 @@ class ProfileScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CommonHeader(
-                  text: "",
-                  isVisibleText: false,
-                  isVisibleDivider: false,
-                  isVisibleBackIcon: false,
-                  icon: Icon(Icons.search, size: 30,),
+                text: "",
+                isVisibleText: false,
+                isVisibleDivider: false,
+                isVisibleBackIcon: false,
+                icon: Icon(
+                  Icons.search,
+                  size: 30,
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20.0),
@@ -33,23 +36,41 @@ class ProfileScreen extends StatelessWidget {
               ProfileDetailsItem(
                 text: 'My Orders',
                 text1: 'Already have 12 orders',
-              onClicked: (){
-                  Navigator.pushNamed(context,  '/MyOrderScreen');
-              },
+                onClicked: () {
+                  Navigator.pushNamed(context, '/MyOrderScreen');
+                },
               ),
-              Divider(color: AppColors.grey.withOpacity(0.1),),
+              Divider(
+                color: AppColors.grey.withOpacity(0.1),
+              ),
               ProfileDetailsItem(text: "Shipping Address", text1: "3 dress"),
-              Divider(color: AppColors.grey.withOpacity(0.1),),
+              Divider(
+                color: AppColors.grey.withOpacity(0.1),
+              ),
               ProfileDetailsItem(text: "Payment Methods", text1: "Visa **345"),
-              Divider(color: AppColors.grey.withOpacity(0.1),),
-              ProfileDetailsItem(text: "Promo-codes", text1: "You have special promo codes"),
-              Divider(color: AppColors.grey.withOpacity(0.1),),
-              ProfileDetailsItem(text: "My reviews", text1: "Reviews for 4 items"),
-              Divider(color: AppColors.grey.withOpacity(0.1),),
-              ProfileDetailsItem(text: "Settings", text1: "Notification, password")
-
-
-
+              Divider(
+                color: AppColors.grey.withOpacity(0.1),
+              ),
+              ProfileDetailsItem(
+                  text: "Promo-codes", text1: "You have special promo codes"),
+              Divider(
+                color: AppColors.grey.withOpacity(0.1),
+              ),
+              ProfileDetailsItem(
+                  text: "My reviews", text1: "Reviews for 4 items"),
+              Divider(
+                color: AppColors.grey.withOpacity(0.1),
+              ),
+              ProfileDetailsItem(
+                text: "Settings",
+                text1: "Notification, password",
+                onClicked: () {
+                  Navigator.pushNamed(context, '/SettingsScreen');
+                },
+              ),
+              const SizedBox(
+                height: 40.0,
+              )
             ],
           ),
         ),

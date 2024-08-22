@@ -75,7 +75,7 @@ class SignIn extends StatelessWidget {
                   borderRadius: 25,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.2,
+                  height: MediaQuery.of(context).size.height * 0.1,
                 ),
                 CommonSocialLogin(
                   text: "Or sign up with social account",
