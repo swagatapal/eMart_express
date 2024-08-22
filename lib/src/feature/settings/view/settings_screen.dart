@@ -1,3 +1,4 @@
+import 'package:emart_express/src/core/common_components/common_button.dart';
 import 'package:emart_express/src/core/common_components/common_header.dart';
 import 'package:emart_express/src/feature/auth/component/common_inputfield.dart';
 import 'package:flutter/cupertino.dart';
@@ -67,18 +68,23 @@ class SettingsScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 20.0, bottom: 20.0, right: 20.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
+                  children:  [
                     CommonHeaderText(
                       text: "Password",
                       fontSize: 18.0,
                     ),
-                    Text(
-                      "Change",
-                      style: TextStyle(
-                        color: AppColors.grey,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 14.0,
-                        fontFamily: "Roboto",
+                    InkWell(
+                      onTap: (){
+                        showChangePasswordCustomModalBottomSheet(context);
+                      },
+                      child: Text(
+                        "Change",
+                        style: TextStyle(
+                          color: AppColors.grey,
+                          fontWeight: FontWeight.normal,
+                          fontSize: 14.0,
+                          fontFamily: "Roboto",
+                        ),
                       ),
                     ),
                   ],
@@ -161,4 +167,105 @@ class SettingsScreen extends StatelessWidget {
       ),
     );
   }
+
+
+  void showChangePasswordCustomModalBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent, // Makes the sheet's background transparent
+      isScrollControlled: false, // Allows the bottom sheet to take up more space
+      builder: (BuildContext context) {
+        return DraggableScrollableSheet(
+          expand: false, // Ensures the sheet is not full screen initially
+          builder: (context, scrollController) {
+            return Container(
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                color: AppColors.white, // Light grey background for the bottom sheet
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(25),
+                  topLeft: Radius.circular(25),
+                ),
+              ),
+              child: SingleChildScrollView(
+                controller: scrollController,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min, // Makes the content take up minimal space
+                  children: [
+                    SizedBox(height: 15),
+                    Container(
+                      width: 80,
+                      height: 4,
+                      color: AppColors.grey,
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "Password change",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "Roboto",
+                        color: AppColors.black1,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        children: [
+                          CommonTextFormField(
+                            labelText: "Old password",
+                            suffixIcon: null,
+                          ),
+                          const SizedBox(height: 5),
+                          Align(
+                            alignment: Alignment.topRight,
+                            child: Text(
+                              "Forgot password?",
+                              style: TextStyle(
+                                fontFamily: "Roboto",
+                                fontSize: 14,
+                                color: AppColors.grey,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 20),
+                          CommonTextFormField(
+                            labelText: "New password",
+                            suffixIcon: null,
+                          ),
+                          const SizedBox(height: 20),
+                          CommonTextFormField(
+                            labelText: "Repeat new password",
+                            suffixIcon: null,
+                          ),
+                          const SizedBox(height: 20),
+                          CommonButton(
+                            label: "SAVE PASSWORD",
+                            labelColor: AppColors.white,
+                            solidColor: AppColors.red1,
+                            buttonWidth: MediaQuery.of(context).size.width,
+                            buttonHeight: 48,
+                            borderRadius: 25,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
+
+
+
+
+
 }
