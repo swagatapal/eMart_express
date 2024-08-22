@@ -6,6 +6,7 @@ import 'package:emart_express/src/feature/favourite/controller/favourite_control
 import 'package:emart_express/src/feature/filter/controller/filter_controller.dart';
 import 'package:emart_express/src/feature/order/controller/order_controller.dart';
 import 'package:emart_express/src/feature/productCard/controller/product_controller.dart';
+import 'package:emart_express/src/feature/settings/controller/toggle_controller.dart';
 import 'package:emart_express/src/feature/shop/controller/shop_controller.dart';
 import 'package:emart_express/src/feature/splash/controller/splash_controller.dart';
 import 'package:emart_express/src/feature/visualSearch/controller/visualSearch_controller.dart';
@@ -61,6 +62,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => OrderProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => ToggleProvider(),
         ),
       ],
       child: MaterialApp(

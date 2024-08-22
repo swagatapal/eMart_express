@@ -2,10 +2,11 @@ import 'package:emart_express/src/core/common_components/common_button.dart';
 import 'package:emart_express/src/core/helper/app_colors.dart';
 import 'package:emart_express/src/core/helper/screen_utils.dart';
 import 'package:emart_express/src/feature/auth/component/common_auth_header.dart';
-import 'package:emart_express/src/feature/auth/component/common_inputfield.dart';
 import 'package:emart_express/src/feature/auth/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../component/common_inputfield.dart';
 
 class ForgotPassword extends StatelessWidget {
   const ForgotPassword({super.key});

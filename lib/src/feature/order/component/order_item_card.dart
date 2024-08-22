@@ -50,7 +50,7 @@ class OrderItemCard extends StatelessWidget {
                         TextSpan(
                           text: 'Order No: ',
                           style: TextStyle(
-                            color: Colors.black,
+                            color: AppColors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: 14.0,
                             fontFamily: "Roboto",
@@ -59,7 +59,7 @@ class OrderItemCard extends StatelessWidget {
                         TextSpan(
                           text: orderNo,
                           style: TextStyle(
-                            color: Colors.black,
+                            color: AppColors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: 14.0,
                             fontFamily: "Roboto",
@@ -95,7 +95,7 @@ class OrderItemCard extends StatelessWidget {
                     TextSpan(
                       text: trackingNumber,
                       style: TextStyle(
-                        color: Colors.black,
+                        color: AppColors.black,
                         fontWeight: FontWeight.bold,
                         fontSize: 14.0,
                         fontFamily: "Roboto",
@@ -123,7 +123,7 @@ class OrderItemCard extends StatelessWidget {
                         TextSpan(
                           text: quantity,
                           style: TextStyle(
-                            color: Colors.black,
+                            color: AppColors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: 14.0,
                             fontFamily: "Roboto",
@@ -147,7 +147,7 @@ class OrderItemCard extends StatelessWidget {
                         TextSpan(
                           text: totalAmount,
                           style: TextStyle(
-                            color: Colors.black,
+                            color: AppColors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: 14.0,
                             fontFamily: "Roboto",
