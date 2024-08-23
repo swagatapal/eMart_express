@@ -5,11 +5,15 @@ import 'package:emart_express/src/feature/auth/view/forgotPassword.dart';
 import 'package:emart_express/src/feature/auth/view/login.dart';
 import 'package:emart_express/src/feature/auth/view/signin.dart';
 import 'package:emart_express/src/feature/checkout/view/checkout_screen.dart';
+import 'package:emart_express/src/feature/checkout/view/order_success.dart';
 import 'package:emart_express/src/feature/filter/view/brand_selection_screen.dart';
 import 'package:emart_express/src/feature/filter/view/filter_screen.dart';
 import 'package:emart_express/src/feature/order/view/order_details_screen.dart';
 import 'package:emart_express/src/feature/payment/view/payment_method_screen.dart';
 import 'package:emart_express/src/feature/productCard/view/product_details_screen.dart';
+import 'package:emart_express/src/feature/shippingAddress/view/adding_shipping_address.dart';
+import 'package:emart_express/src/feature/shippingAddress/view/shipping_address.dart';
+import 'package:emart_express/src/feature/testScreen/test_screen.dart';
 import 'package:emart_express/src/feature/visualSearch/view/crop_item.dart';
 import 'package:emart_express/src/feature/visualSearch/view/search_by_taking_photo.dart';
 import 'package:emart_express/src/feature/visualSearch/view/visual_search.dart';
@@ -32,6 +36,15 @@ class AppRoutes {
   static const String productDetailsScreen = '/ProductDetailsScreen';
   static const String checkoutScreen = '/CheckoutScreen';
   static const String paymentMethodScreen = '/PaymentMethodScreen';
+  static const String shippingAddress = '/ShippingAddress';
+  static const String addingShippingAddress = '/AddingShippingAddress';
+  static const String orderSuccess = '/OrderSuccess';
+
+
+
+
+
+  static const String dataInputScreen = '/DataInputScreen';
 
 
 }
@@ -88,6 +101,22 @@ class AppRouter {
 
       case AppRoutes.paymentMethodScreen:
         return MaterialPageRoute(builder: (context) =>  PaymentMethodScreen());
+
+      case AppRoutes.shippingAddress:
+        return MaterialPageRoute(builder: (context) =>  ShippingAddress());
+
+      case AppRoutes.addingShippingAddress:
+        return MaterialPageRoute(builder: (context) =>  AddingShippingAddress());
+
+      case AppRoutes.orderSuccess:
+        return MaterialPageRoute(builder: (context) =>  OrderSuccess());
+
+
+
+
+
+      case AppRoutes.dataInputScreen:
+        return MaterialPageRoute(builder: (context) =>  DataInputScreen());
 
         // case AppRoutes.details:
     //   final args = settings.arguments as String?;

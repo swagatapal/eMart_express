@@ -42,6 +42,9 @@ class CheckoutScreen extends StatelessWidget {
                       accountHolderName: 'Jane Doe',
                       address:
                           '3 Newbridge Court \n Chino Hilis, CA 97109, United States',
+                      onClicked: (){
+                        Navigator.pushNamed(context, '/ShippingAddress');
+                      },
                     ),
                     const SizedBox(
                       height: 50,
@@ -52,7 +55,7 @@ class CheckoutScreen extends StatelessWidget {
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
+                            children:  [
                               Text(
                                 "Payment",
                                 style: TextStyle(
@@ -61,13 +64,18 @@ class CheckoutScreen extends StatelessWidget {
                                     color: AppColors.black1,
                                     fontSize: 18),
                               ),
-                              Text(
-                                "Change",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                    fontFamily: "Roboto",
-                                    color: AppColors.red1,
-                                    fontSize: 14),
+                              InkWell(
+                                onTap: (){
+                                  Navigator.pushNamed(context, '/PaymentMethodScreen');
+                                },
+                                child: Text(
+                                  "Change",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w700,
+                                      fontFamily: "Roboto",
+                                      color: AppColors.red1,
+                                      fontSize: 14),
+                                ),
                               ),
                             ],
                           ),
@@ -159,7 +167,8 @@ class CheckoutScreen extends StatelessWidget {
                       borderRadius: 25,
                       buttonHeight: 48,
                       onClicked: (){
-                        Navigator.pushNamed(context, '/PaymentMethodScreen');
+                        Navigator.pushNamed(context, '/OrderSuccess');
+
                       },
                     ),
                   ],
