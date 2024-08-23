@@ -57,7 +57,12 @@ class ProfileScreen extends StatelessWidget {
                 color: AppColors.grey.withOpacity(0.1),
               ),
               ProfileDetailsItem(
-                  text: "My reviews", text1: "Reviews for 4 items"),
+                text: "My reviews",
+                text1: "Reviews for 4 items",
+                onClicked: () {
+                  Navigator.pushNamed(context, '/RatingAndReviewScreen');
+                },
+              ),
               Divider(
                 color: AppColors.grey.withOpacity(0.1),
               ),

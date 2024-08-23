@@ -8,6 +8,7 @@ import 'package:emart_express/src/feature/home/view/home_second_main_page.dart';
 import 'package:emart_express/src/feature/home/view/home_third_main_page.dart';
 import 'package:emart_express/src/feature/order/view/order_details_screen.dart';
 import 'package:emart_express/src/feature/profile/view/profile_screen.dart';
+import 'package:emart_express/src/feature/rating&review/view/rating_and_review_screen.dart';
 import 'package:emart_express/src/feature/settings/view/settings_screen.dart';
 import 'package:emart_express/src/feature/shop/view/shop_catalog_one_screen.dart';
 import 'package:emart_express/src/feature/shop/view/shop_catalog_two_screen.dart';
@@ -167,6 +168,12 @@ class HomeConfig extends StatelessWidget {
             return MaterialPageRoute(
               builder: (context) => SettingsScreen(),
             );
+
+          case '/RatingAndReviewScreen':
+            return MaterialPageRoute(
+              builder: (context) => RatingAndReview(),
+            );
+
           default:
             return MaterialPageRoute(
               builder: (context) => ProfileScreen(),
