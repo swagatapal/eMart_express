@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 class AccountHolderDetails extends StatelessWidget {
   final String accountHolderName;
   final String address;
-  const AccountHolderDetails({super.key, required this.accountHolderName, required this.address});
+  late Function()? onClicked;
+
+   AccountHolderDetails({super.key, required this.accountHolderName, required this.address, this.onClicked});
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +37,15 @@ class AccountHolderDetails extends StatelessWidget {
                     color: AppColors.black1,
                     fontSize: 14
                 ),),
-                Text("Change", style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Roboto",
-                    color: AppColors.red1,
-                    fontSize: 14
-                ),),
+                InkWell(
+                  onTap: onClicked,
+                  child: Text("Change", style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontFamily: "Roboto",
+                      color: AppColors.red1,
+                      fontSize: 14
+                  ),),
+                ),
               ],
             ),
             const SizedBox(height: 10,),

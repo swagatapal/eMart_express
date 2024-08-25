@@ -12,28 +12,26 @@ class PaymentCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<PaymentCardController>(
-      builder: (context, cardController, child) {
-        final isDefault = cardController.defaultCardIndex == index;
+    final paymentCardController = Provider.of<PaymentCardController>(context);
         return Column(
           children: [
             Container(
               height: MediaQuery.of(context).size.height * 0.3,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                color: isDefault ? AppColors.black1 : AppColors.black1.withOpacity(0.5),
+                color: paymentCardController.selectedCardIndex==index?AppColors.black1:AppColors.black.withOpacity(0.5),
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.red1.withOpacity(0.25), // Shadow color
-                    offset: Offset(0, 4), // X and Y offsets
-                    blurRadius: 8, // Blur radius
+                    color: AppColors.grey.withOpacity(0.34), // Shadow color
+                    offset: Offset(0, 1), // X and Y offsets
+                    blurRadius: 25, // Blur radius
                     spreadRadius: 0, // Spread radius
                   ),
                 ],
               ),
               child: Padding(
-                padding: const EdgeInsets.all(40.0),
+                padding: const EdgeInsets.only(left: 30.0, right: 30, top: 40),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -105,15 +103,15 @@ class PaymentCard extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
             Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Checkbox(
                   checkColor: AppColors.white1,
                   activeColor: AppColors.black1,
-                  value: isDefault,
+                  value: paymentCardController.selectedCardIndex == index,
                   onChanged: (bool? value) {
-                    cardController.toggleCheckbox(index);
+                    paymentCardController.toggleDefault(index);
                   },
                 ),
                 Text(
@@ -129,8 +127,7 @@ class PaymentCard extends StatelessWidget {
             ),
           ],
         );
-      },
-    );
+
   }
 }
 
