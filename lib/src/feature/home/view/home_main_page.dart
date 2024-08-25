@@ -28,83 +28,92 @@ class HomePage extends StatelessWidget {
                 left: 20,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children:  [
-                    Text("Fashion \nsale",
-                    style: TextStyle(
-                      fontSize: 48,
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.white,
-                        fontFamily: "Roboto"
-                    ),),
-                    const SizedBox(height: 20,),
+                  children: [
+                    Text(
+                      "Fashion \nsale",
+                      style: TextStyle(
+                          fontSize: 48,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.white,
+                          fontFamily: "Roboto"),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
                     CommonButton(
-                      label:"Check",
+                      label: "Check",
                       labelColor: AppColors.white,
                       solidColor: AppColors.red,
                       borderRadius: 25,
-                      buttonWidth: MediaQuery.of(context).size.width*0.45,
+                      buttonWidth: MediaQuery.of(context).size.width * 0.45,
                       buttonHeight: 36,
-                      onClicked: (){
-                        Navigator.pushNamed(context,'/homeSecondMainPage');
+                      onClicked: () {
+                        Navigator.pushNamed(context, '/homeSecondMainPage');
                       },
                     )
                   ],
                 ),
               )
             ]),
-            const SizedBox(height: 20,),
+            const SizedBox(
+              height: 20,
+            ),
             CommonHomeHeader(
                 text1: "New",
                 text2: "You've never seen it before!",
-                text3: "View all"
+                text3: "View all"),
+            const SizedBox(
+              height: 10,
             ),
-            const SizedBox(height: 10,),
             SizedBox(
-              height: MediaQuery.of(context).size.height*0.33,
+              height: MediaQuery.of(context).size.height * 0.33,
               width: MediaQuery.of(context).size.width,
               child: ListView.builder(
-                physics: BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
+                  physics: BouncingScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
                   itemCount: 10,
-                  itemBuilder:(BuildContext context, int index){
-                    return
-        
-                      index == 0 ? CommonItemCard(
-                        onClicked: (){
-                          Navigator.of(context, rootNavigator: true).pushNamed('/ProductDetailsScreen');
-                        },
-                      status: 'New',
-                      colorStatus: AppColors.black1,
-                      rateCount: '(100)',
-                      dressName: 'Dorothy perkins',
-                      dressTime: 'Evening Dress',
-                      originalPrice: '15\$',
-                      offerPrice: '22\$',
-                      dressImage: 'https://img.freepik.com/free-photo/curly-girl-beautiful-dress_144627-10112.jpg',
-                    ):
-                    index == 1?CommonItemCard(
-                      status: 'New',
-                      colorStatus: AppColors.black1,
-                      rateCount: '(100)',
-                      dressName: 'Dorothy perkins',
-                      dressTime: 'Evening Dress',
-                      originalPrice: '15\$',
-                      offerPrice: '22\$',
-                      dressImage: 'https://images.pexels.com/photos/902030/pexels-photo-902030.jpeg?auto=compress&cs=tinysrgb&w=1200',
-                    ):CommonItemCard(
-                      status: 'New',
-                      colorStatus: AppColors.black1,
-                      rateCount: '(100)',
-                      dressName: 'Dorothy perkins',
-                      dressTime: 'Evening Dress',
-                      originalPrice: '15\$',
-                      offerPrice: '22\$',
-                      dressImage: 'https://images.pexels.com/photos/904117/pexels-photo-904117.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-                    );
+                  itemBuilder: (BuildContext context, int index) {
+                    return index == 0
+                        ? CommonItemCard(
+                          onClicked: () {
+                            Navigator.of(context, rootNavigator: true)
+                                .pushNamed('/ProductDetailsScreen');
+                          },
+                          status: 'New',
+                          colorStatus: AppColors.black1,
+                          rateCount: '(100)',
+                          dressName: 'Dorothy perkins',
+                          dressTime: 'Evening Dress',
+                          originalPrice: '15\$',
+                          offerPrice: '22\$',
+                          dressImage:
+                              'https://img.freepik.com/free-photo/curly-girl-beautiful-dress_144627-10112.jpg',
+                        )
+                        : index == 1
+                            ? CommonItemCard(
+                              status: 'New',
+                              colorStatus: AppColors.black1,
+                              rateCount: '(100)',
+                              dressName: 'Dorothy perkins',
+                              dressTime: 'Evening Dress',
+                              originalPrice: '15\$',
+                              offerPrice: '22\$',
+                              dressImage:
+                                  'https://images.pexels.com/photos/902030/pexels-photo-902030.jpeg?auto=compress&cs=tinysrgb&w=1200',
+                            )
+                            : CommonItemCard(
+                              status: 'New',
+                              colorStatus: AppColors.black1,
+                              rateCount: '(100)',
+                              dressName: 'Dorothy perkins',
+                              dressTime: 'Evening Dress',
+                              originalPrice: '15\$',
+                              offerPrice: '22\$',
+                              dressImage:
+                                  'https://images.pexels.com/photos/904117/pexels-photo-904117.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                            );
                   }),
             )
-        
-        
           ],
         ),
       ),
